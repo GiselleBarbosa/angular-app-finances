@@ -1,0 +1,29 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+}
+
+.left {
+
+  width: 50%;
+}
+
+.left h1 {
+ text-align: center;
+  font-size: 2rem;
+/*   margin-top: 10rem; */
+ /*  letter-spacing: 0.1em; */
+justify-content: center;
+justify-items: center;
+
+}
+
+.right {
+  background-color: black;
+  width: 50%;
+}
+
+
