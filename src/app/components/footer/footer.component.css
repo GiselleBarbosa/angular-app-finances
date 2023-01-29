@@ -1,0 +1,19 @@
+footer {
+  bottom: 0;
+  background-color: rgb(230, 230, 230);
+  height: 9%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+ }
+
+ p {
+  font-weight: 400;
+ }
+
+ span {
+  font-weight: bold;
+ }
