@@ -9,6 +9,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { LoginModalComponent } from './components/login-modal/login-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { TransactionComponent } from './components/pages/transaction/transaction.component';
 
 
 @NgModule({
@@ -17,12 +21,16 @@ import { HeaderComponent } from './components/header/header.component';
     HomeComponent,
     FooterComponent,
     HeaderComponent,
+    LoginModalComponent,
+    TransactionComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
