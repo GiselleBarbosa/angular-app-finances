@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+}
+.cards {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
+.card {
+  width: 200px;
+
+  box-shadow: 2px solid black;
+}
+
+.incomes {
+  border: 1px solid rgb(27, 189, 81);
+  border-radius: 15px;
+}
+
+.expense {
+  border: 1px solid rgb(219, 63, 35);
+  border-radius: 15px;
+}
+
+.total {
+  border: 1px solid rgb(79, 108, 236);
+  border-radius: 15px;
+}
+
+/* Itens */
+
+.itens {
+  padding-top: 2rem;
+  display: flex;
+  align-content: center;
+  gap: 10px;
+
+}
+
+#type {
+  border-radius: 5px;
+}
+
+.btn-item {
+  margin-left: 10px;
+}
