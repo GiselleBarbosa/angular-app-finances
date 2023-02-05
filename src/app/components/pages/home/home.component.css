@@ -4,26 +4,42 @@
   justify-content: space-around;
   height: 100%;
   width: 100%;
+  padding: 2%;
 }
 
 .left {
+  width: 59%;
+  height: 500px;
+  left: 47px;
+  top: 111px;
 
-  width: 50%;
 }
 
-.left h1 {
- text-align: center;
-  font-size: 2rem;
-/*   margin-top: 10rem; */
- /*  letter-spacing: 0.1em; */
-justify-content: center;
-justify-items: center;
+h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  justify-content: center;
+  justify-items: center;
+  font-family: 'Roboto';
+  font-weight: 500;
+  line-height: 24px;
 
+}
+
+.left p {
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+.img-capa img {
+  width: 80%;
+  height: 15%;
 }
 
 .right {
-  background-color: black;
-  width: 50%;
+  width: 39%;
 }
 
 
