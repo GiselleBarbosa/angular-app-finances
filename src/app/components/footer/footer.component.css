@@ -18,3 +18,11 @@ footer {
  span {
   font-weight: bold;
  }
+
+ @media(max-width: 460px){
+  footer{
+    display: none;
+  }
+
+ }
+
