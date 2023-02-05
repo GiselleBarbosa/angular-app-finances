@@ -16,10 +16,7 @@
 }
 
 h1 {
-  text-align: center;
   font-size: 1.8rem;
-  justify-content: center;
-  justify-items: center;
   font-family: 'Roboto';
   font-weight: 500;
   line-height: 24px;
@@ -27,6 +24,7 @@ h1 {
 }
 
 .left p {
+  width: 90%;
   font-family: "Roboto", sans-serif;
   font-size: 22px;
   font-weight: 300;
@@ -40,6 +38,7 @@ h1 {
 
 .right {
   width: 39%;
+  float: right;
 }
 
 
