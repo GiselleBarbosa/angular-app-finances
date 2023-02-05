@@ -49,3 +49,12 @@
 .btn-item {
   margin-left: 10px;
 }
+
+
+@media (max-width: 770px){
+  .cards .itens {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
