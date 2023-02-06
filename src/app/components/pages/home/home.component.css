@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 500px;
+  height: 100%;
   width: 100%;
   margin-top: 3%;
   padding: 0;
@@ -18,7 +18,7 @@
 }
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-family: "Roboto";
   font-weight: 500;
   line-height: 24px;
@@ -38,33 +38,33 @@ p {
   height: 15%;
 }
 
-.form-group{
+.form-group {
   margin-bottom: 3%;
 }
 
 input::placeholder {
-  color: rgba(171, 170, 170, 0.58);
+  color: rgba(93, 93, 93, 0.74);
 }
 
-.form{
+.form {
   margin-top: 9%;
 }
 
 /* Responsividade */
-
-@media(max-width: 460px){
-  .container{
+@media (max-width: 600px) {
+  .container {
     width: 100%;
   }
-  .main{
+
+  .main {
     display: flex;
     flex-direction: column;
     align-items: center;
     min-width: 200px;
-
   }
-  h1{
-    font-size: 1.5rem;
+
+  h1 {
+    font-size: 1.4rem;
     margin-bottom: 4%;
   }
 
@@ -72,12 +72,21 @@ input::placeholder {
     font-size: 1rem;
   }
 
-  img{
-    min-width: 100%;
+  img {
+    min-width: 90%;
+  }
+
+  .left {
+    margin-top: 5%;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+  .right {
+    margin-top: 10%;
+    align-items: center;
+    width: 90%;
+    margin-bottom: 10%;
   }
 }
-
-
-
-
-

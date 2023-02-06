@@ -19,7 +19,7 @@ footer {
   font-weight: bold;
  }
 
- @media(max-width: 460px){
+ @media(max-width: 600px){
   footer{
     display: none;
   }
