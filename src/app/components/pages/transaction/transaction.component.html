@@ -1,1 +1,52 @@
-<p>transaction works!</p>
+<div class="container">
+  <div class="cards">
+    <mat-card class="card incomes">
+      <mat-card-title >Entrada <mat-icon class="ms-5 text-success">arrow_circle_up</mat-icon> </mat-card-title>
+      <mat-card-subtitle><strong>R$</strong> {{ incomes }}</mat-card-subtitle>
+    </mat-card>
+
+    <mat-card class="card expense">
+      <mat-card-title>Saída <mat-icon class="ms-5 text-danger">arrow_circle_down</mat-icon></mat-card-title>
+      <mat-card-subtitle><strong>R$</strong>  {{ incomes }}</mat-card-subtitle>
+    </mat-card>
+
+    <mat-card class="card total">
+      <mat-card-title>Total <mat-icon class="ms-5 text-primary">monetization_on</mat-icon></mat-card-title>
+      <mat-card-subtitle><strong>R$</strong> {{ incomes }}</mat-card-subtitle>
+    </mat-card>
+  </div>
+
+<div class="itens bg-danger d-flex ">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="desc">Descrição</span>
+    </div>
+    <input type="text" class="form-control">
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="value">Valor</span>
+    </div>
+    <input type="number" class="form-control">
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="desc">Tipo</span>
+    </div>
+    <select id="type">
+      <option>Entrada</option>
+      <option>Saída</option>
+    </select>
+
+    <div class="btn-item">
+      <button class="btn btn-danger btn-item">Incluir</button>
+    </div>
+
+  </div>
+
+</div>
+
+
+</div>
