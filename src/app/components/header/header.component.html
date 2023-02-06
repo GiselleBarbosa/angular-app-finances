@@ -13,8 +13,9 @@
 
       </ul>
       <form class="d-flex">
-             <button type="button" class="btn btn-danger btn-light btn-sm" data-bs-toggle="modal"
-          data-bs-target="#janelaModal" (click)="onModal()">Login</button>
+        <button type="button" class="btn btn-danger btn-light btn-sm" data-bs-toggle="modal"
+          data-bs-target="#janelaModal">Login</button>
+        <app-login-modal (sendLoginEvent)="onLogin()"></app-login-modal>
       </form>
     </div>
   </div>

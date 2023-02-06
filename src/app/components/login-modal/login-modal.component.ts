@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-login-modal',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginModalComponent implements OnInit {
 
+  @Output() sendLogin = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  sendLoginEvent() {
+    this.sendLogin.emit();
+  }
 }

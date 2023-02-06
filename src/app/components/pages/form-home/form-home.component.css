@@ -1,0 +1,17 @@
+ form {
+  margin-top: 5%;
+}
+
+label {
+  padding-left: 5px ;
+  margin-bottom: 1%;
+}
+
+.form-group {
+    margin-bottom: 5%;
+}
+
+input::placeholder {
+  color: #5d5d5dbd;
+}
+

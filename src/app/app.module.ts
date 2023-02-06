@@ -13,6 +13,7 @@ import { LoginModalComponent } from './components/login-modal/login-modal.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TransactionComponent } from './components/pages/transaction/transaction.component';
+import { FormHomeComponent } from './components/pages/form-home/form-home.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { TransactionComponent } from './components/pages/transaction/transaction
     HeaderComponent,
     LoginModalComponent,
     TransactionComponent,
+    FormHomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,12 +8,13 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router : Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  onModal(){
-    this.router.navigate(['login'])
+  onLogin() {
+    console.log("Clicou no evento");
+    return;
   }
 }
