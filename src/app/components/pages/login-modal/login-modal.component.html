@@ -7,28 +7,28 @@
       </div>
       <div class="modal-body">
         <div class="container">
-          <div class="main m-2">
+          <div class="main">
 
             <form>
 
-              <div class="form-group">
-                <label for="email"><strong> Endereço de email </strong></label>
-                <input type="email" class="form-control m-1" id="email" placeholder="Seu email">
+              <div class="form-group mb-3">
+                <label for="email" class="mb-2">Endereço de email</label>
+                <input type="email" class="form-control" id="email" placeholder="Seu email">
               </div>
 
-              <div class="form-group">
-                <label for="password">Senha</label>
-                <input type="password" class="form-control m-1" id="password" placeholder="Digute sua senha">
+              <div class="form-group mb-3" >
+                <label for="password" class="mb-2">Senha</label>
+                <input type="password" class="form-control" id="password" placeholder="Digute sua senha">
               </div>
 
-              <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input m-1" id="exampleCheck1">
+              <div class="form-group form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Lembrar de mim</label>
               </div>
               
               <div class="button float-end">
                 <button type="button" class="btn btn-light m-1" data-bs-dismiss="modal">Fechar</button>
-                <button type="submit" class="btn btn-danger">Entrar</button>
+                <button type="submit" class="btn btn-danger" (click)="onAuthenticated()">Entrar</button>
               </div>
 
             </form>

@@ -1,60 +1,89 @@
 .container {
   display: flex;
   flex-direction: column;
-
 }
+
 .cards {
   padding-top: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-
 }
 
 .card {
   width: 200px;
-
   box-shadow: 2px solid black;
+  margin: 0 auto;
 }
 
 .incomes {
-  border: 1px solid rgb(27, 189, 81);
+  border: 1px solid #1bbd51;
   border-radius: 15px;
 }
 
 .expense {
-  border: 1px solid rgb(219, 63, 35);
+  border: 1px solid #db3f23;
   border-radius: 15px;
 }
 
 .total {
-  border: 1px solid rgb(79, 108, 236);
+  border: 1px solid #4f6cec;
   border-radius: 15px;
 }
 
 /* Itens */
 
 .itens {
+  margin: 0 auto;
   padding-top: 2rem;
   display: flex;
   align-content: center;
   gap: 10px;
-
 }
 
 #type {
   border-radius: 5px;
 }
 
-.btn-item {
-  margin-left: 10px;
-}
-
-
-@media (max-width: 770px){
-  .cards .itens {
+@media (max-width: 400px) {
+  .cards {
+    gap: 2rem;
     display: flex;
     flex-direction: column;
   }
 
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid #9f9f9f84;
+  }
+
+  .itens {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn-item {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .cards {
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .itens {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-group {
+    min-width: 100%;
+  }
+
+  .btn-item {
+    margin-bottom: 3rem;
+  }
 }
