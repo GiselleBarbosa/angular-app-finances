@@ -7,9 +7,9 @@ import { AppRoutingModule } from 'src/app-routing.moule';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/pages/home/home.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
-import { LoginModalComponent } from './components/login-modal/login-modal.component';
+import { FooterComponent } from './components/template/footer/footer.component';
+import { HeaderComponent } from './components/template/header/header.component';
+import { LoginModalComponent } from './components/pages/login-modal/login-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TransactionComponent } from './components/pages/transaction/transaction.component';

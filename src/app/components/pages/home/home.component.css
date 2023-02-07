@@ -9,7 +9,7 @@
 }
 
 .left {
-  width: 60%;
+  width: 50%;
 }
 
 .right {
@@ -29,17 +29,17 @@
 .right p,
 .left p {
   font-family: "Roboto", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 300;
-  line-height: 2rem;
+  line-height: 1.6rem;
   width: 90%;
 }
 
 .img-capa img {
+margin: 0 auto;
   max-width: 70%;
   height: 15%;
 }
-
 
 /* Responsividade */
 @media (max-width: 600px) {

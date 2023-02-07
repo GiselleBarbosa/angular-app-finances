@@ -9,13 +9,14 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class FormHomeComponent implements OnInit {
 
   formulario = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.min(3)]),
+    name: new FormControl('', [Validators.required, Validators.min(5)]),
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     passwordConfirm: new FormControl('', [Validators.required, Validators.minLength(6)]),
   });
 
   constructor() { }
+  novalidate : boolean = true 
 
   ngOnInit(): void {
   }
@@ -29,11 +30,17 @@ export class FormHomeComponent implements OnInit {
 
   onSubmit() {
     if (this.formulario.valid) {
-      console.log(this.formulario.value);
-      console.log("ENVIADO COM SUCESSO");
+      console.log("success");
+      this.resetar();
     }
     else {
-      console.log("formulario INVALIDO");
+      console.log("invalid form");
     }
+    /* chamando function para resetar*/
+
+  }
+  /* Resetando formulario apos envio */
+  resetar() {
+    this.formulario.reset();
   }
 }
