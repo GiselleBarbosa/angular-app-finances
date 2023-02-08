@@ -1,15 +1,19 @@
 footer {
   bottom: 0;
-  height: 8%;
+  height: 6%;
   width: 100%;
   position: absolute;
   color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-p {
-  text-align: center;
-  font-weight: 400;
-  margin-top: 0.5%;
+footer p {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 12px;
+  font-weight: 300;
   color: #fff;
 }
 
@@ -20,6 +24,14 @@ span {
 
 @media (max-width: 600px) {
   footer {
-    display: none;
+    height: 10%;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  p {
+    text-align: center;
   }
 }

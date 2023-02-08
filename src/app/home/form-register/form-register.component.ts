@@ -12,7 +12,6 @@ export class FormRegisterComponent implements OnInit {
     name: new FormControl('', [Validators.required, Validators.min(5)]),
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    passwordConfirm: new FormControl('', [Validators.required, Validators.minLength(6)]),
   });
 
   constructor() { }
@@ -25,7 +24,6 @@ export class FormRegisterComponent implements OnInit {
     let name = this.formulario.controls.name.value;
     let email = this.formulario.controls.email.value;
     let password = this.formulario.controls.password.value;
-    let passwordConfirm = this.formulario.controls.passwordConfirm.value;
   }
 
   onSubmit() {
