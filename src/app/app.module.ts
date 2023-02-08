@@ -6,14 +6,14 @@ import { MaterialModule } from './shared/material.module';
 import { AppRoutingModule } from 'src/app-routing.moule';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/pages/home/home.component';
-import { FooterComponent } from './components/template/footer/footer.component';
-import { HeaderComponent } from './components/template/header/header.component';
-import { LoginModalComponent } from './components/pages/login-modal/login-modal.component';
+import { HomeComponent } from './pages/home/home.component';
+import { FooterComponent } from './template/footer/footer.component';
+import { HeaderComponent } from './template/header/header.component';
+import { LoginModalComponent } from './pages/login-modal/login-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { TransactionComponent } from './components/pages/transaction/transaction.component';
-import { FormHomeComponent } from './components/pages/form-home/form-home.component';
+import { TransactionComponent } from './pages/transaction/transaction.component';
+import { FormRegisterComponent } from './pages/form-register/form-register.component';
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import { FormHomeComponent } from './components/pages/form-home/form-home.compon
     HeaderComponent,
     LoginModalComponent,
     TransactionComponent,
-    FormHomeComponent,
+    FormRegisterComponent,
   ],
   imports: [
     BrowserModule,

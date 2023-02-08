@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-form-home',
-  templateUrl: './form-home.component.html',
-  styleUrls: ['./form-home.component.css']
+  selector: 'app-form-register',
+  templateUrl: './form-register.component.html',
+  styleUrls: ['./form-register.component.css']
 })
-export class FormHomeComponent implements OnInit {
+export class FormRegisterComponent implements OnInit {
 
   formulario = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.min(5)]),
