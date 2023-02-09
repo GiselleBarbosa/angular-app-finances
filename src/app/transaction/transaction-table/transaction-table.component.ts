@@ -17,11 +17,11 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 
 @Component({
-  selector: 'app-transaction-form',
-  templateUrl: './transaction-form.component.html',
-  styleUrls: ['./transaction-form.component.css']
+  selector: 'app-transaction-table',
+  templateUrl: './transaction-table.component.html',
+  styleUrls: ['./transaction-table.component.scss']
 })
-export class TransactionFormComponent implements OnInit {
+export class TransactionTableComponent implements OnInit {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;

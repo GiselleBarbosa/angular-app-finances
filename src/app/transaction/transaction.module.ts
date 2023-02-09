@@ -5,18 +5,18 @@ import { TransactionRoutingModule } from './transaction-routing.module';
 import { MaterialModule } from '../shared/material.module';
 import { TransactionComponent } from './transaction.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { TransactionFormComponent } from './transaction-form/transaction-form.component';
+import { TransactionTableComponent } from './transaction-table/transaction-table.component';
 
 
 @NgModule({
   declarations: [
     TransactionComponent,
-    TransactionFormComponent
+    TransactionTableComponent
   ],
   imports: [
     CommonModule,
     TransactionRoutingModule,
-    MaterialModule, 
+    MaterialModule,
     ReactiveFormsModule
 
   ]
