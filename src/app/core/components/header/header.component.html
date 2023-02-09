@@ -20,13 +20,13 @@
       <form class="d-flex">
         <button
           type="button"
-          class="btn btn-danger btn-light btn-sm"
+          class="btn btn-danger btn-light btn-sm mb-3 mt-2"
           data-bs-toggle="modal"
           data-bs-target="#janelaModal"
         >
           Login
         </button>
-        <app-login-modal (sendLoginEvent)="onLogin()"></app-login-modal>
+        <app-login-modal   (click)="onLogin()"></app-login-modal>
       </form>
     </div>
   </div>

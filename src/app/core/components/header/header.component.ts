@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
 
@@ -14,7 +14,6 @@ export class HeaderComponent implements OnInit {
   }
 
   onLogin() {
-    console.log("Clicou no evento");
-    return;
+    this.router.navigate(['transaction']);
   }
 }
