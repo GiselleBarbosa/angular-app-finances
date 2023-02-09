@@ -13,7 +13,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onLogin() {
+  onLogin(e: Event) {
+    e.preventDefault();
+    console.log("Clicou no Login");
     this.router.navigate(['transaction']);
   }
 }

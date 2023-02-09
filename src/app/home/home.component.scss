@@ -1,11 +1,13 @@
+.container {
+  margin-bottom: 10rem;
+}
+
 .main {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   height: 100%;
   width: 100%;
   margin-top: 3%;
-  padding: 0;
 }
 
 .left {
@@ -36,7 +38,7 @@
 }
 
 .img-capa img {
-margin: 0 auto;
+  margin: 0 auto;
   max-width: 70%;
   height: 15%;
 }
