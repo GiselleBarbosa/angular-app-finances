@@ -14,12 +14,12 @@ export class TransactionService {
 
   constructor(private http: HttpClient) { }
 
-  list() : Observable<TableItems[]> {
+  list(): Observable<TableItems[]> {
     return this.http.get<TableItems[]>(this.API)
-    .pipe(
-      first(),
-      delay(1)
-    )
+      .pipe(
+        first(),
+        delay(1)
+      );
   }
 
   post() { }
