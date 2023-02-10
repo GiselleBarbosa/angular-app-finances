@@ -2,7 +2,24 @@ table {
   width: 100%;
 }
 
-.mat-icon{
+.mat-icon {
   cursor: pointer;
 }
 
+.red {
+  color: rgb(206, 40, 40);
+}
+
+.green {
+  color: green;
+}
+
+.gray {
+  color: rgb(105, 105, 116);
+}
+
+@media(max-width: 460px){
+ .type {
+    display: none
+  }
+}

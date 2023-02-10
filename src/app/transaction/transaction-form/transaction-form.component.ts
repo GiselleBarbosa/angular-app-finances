@@ -18,7 +18,6 @@ export class TransactionFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   
   getDataForm() {
     let desc = this.form.controls['description'].value;
