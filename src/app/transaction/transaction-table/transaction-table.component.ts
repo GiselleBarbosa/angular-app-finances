@@ -29,7 +29,6 @@ export class TransactionTableComponent implements OnInit {
     .pipe(
       catchError(error => {
         this.onError('Lista de cursos não encontrada.');
-        console.log("Não carregou o Banco de Dados");
         return of([]);
       })
     ).subscribe(data => this.dataSource = data);
@@ -42,7 +41,6 @@ export class TransactionTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
   }
 
 
