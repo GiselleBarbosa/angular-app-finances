@@ -20,7 +20,6 @@ import { TransactionFormComponent } from './transaction-form/transaction-form.co
     TransactionRoutingModule,
     MaterialModule,
     ReactiveFormsModule
-
   ]
 })
 export class TransactionModule { }

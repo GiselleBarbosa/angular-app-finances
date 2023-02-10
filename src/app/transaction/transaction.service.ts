@@ -8,7 +8,7 @@ import { TableItems } from '../shared/models/table-transaction.model';
 export class TransactionService {
 
   private readonly API = 'http://localhost:3000/items';
-  
+
   items?: TableItems[];
 
   constructor(private http: HttpClient) { }
@@ -17,7 +17,5 @@ export class TransactionService {
     return this.http.get<TableItems[]>(this.API);
   }
 
-  post(){
-    
-  }
+  post() { }
 }

@@ -8,6 +8,7 @@ import { TableItems } from '../../shared/models/table-transaction.model';
   styleUrls: ['./transaction-table.component.scss']
 })
 export class TransactionTableComponent implements OnInit {
+
   ITEMS_TABLE: TableItems[] = [];
 
   displayedColumns: string[] = ['description', 'value', 'type', 'actions'];
@@ -19,8 +20,4 @@ export class TransactionTableComponent implements OnInit {
   ngOnInit() {
     this.service.list().subscribe(data => this.dataSource = data);
   }
-
-
-
-
 }
