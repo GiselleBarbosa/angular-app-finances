@@ -18,7 +18,7 @@ export class TransactionTableComponent implements OnInit {
 
   ITEMS_TABLE: TableItems[] = [];
 
-  displayedColumns: string[] = ['description', 'value', 'type', 'actions'];
+  displayedColumns: string[] = ['description', 'value', 'type', 'update', 'remove'];
 
   dataSource = this.ITEMS_TABLE;
 
@@ -28,12 +28,12 @@ export class TransactionTableComponent implements OnInit {
   ) {
 
     this.service.list()
-    .pipe(
-      catchError(error => {
-        this.onError('Lista de cursos não encontrada.');
-        return of([]);
-      })
-    ).subscribe(data => this.dataSource = data);
+      .pipe(
+        catchError(error => {
+          this.onError('Lista de cursos não encontrada.');
+          return of([]);
+        })
+      ).subscribe(data => this.dataSource = data);
   }
 
   onError(errorMessage: string) {
@@ -43,6 +43,14 @@ export class TransactionTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  onEdit() {
+    // alert("Clicou em UPDATE");
+  }
+
+  onDelete() {
+    // alert("Clicou em DELETE");
   }
 
 

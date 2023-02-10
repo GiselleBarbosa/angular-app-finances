@@ -2,5 +2,6 @@ export interface TableItems {
   description: string;
   value: number;
   type: string;
-  actions?: []
+  update: string;
+  remove: string;
 }
