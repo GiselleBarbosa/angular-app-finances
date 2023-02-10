@@ -10,7 +10,7 @@ import { TableItems } from '../../shared/models/table-transaction.model';
 export class TransactionTableComponent implements OnInit {
   ITEMS_TABLE: TableItems[] = [];
 
-  displayedColumns: string[] = ['description', 'value', 'type'];
+  displayedColumns: string[] = ['description', 'value', 'type', 'actions'];
 
   dataSource = this.ITEMS_TABLE;
 
