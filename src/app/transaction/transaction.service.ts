@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { delay, first, Observable } from 'rxjs';
 import { TableItems } from '../shared/models/table-transaction.model';
 
 @Injectable({
@@ -13,8 +14,12 @@ export class TransactionService {
 
   constructor(private http: HttpClient) { }
 
-  list() {
-    return this.http.get<TableItems[]>(this.API);
+  list() : Observable<TableItems[]> {
+    return this.http.get<TableItems[]>(this.API)
+    .pipe(
+      first(),
+      delay(1)
+    )
   }
 
   post() { }

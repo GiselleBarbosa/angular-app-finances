@@ -4,20 +4,20 @@ import { NgModule } from '@angular/core';
 import { FormRegisterComponent } from './form-register/form-register.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { MaterialModule } from '../shared/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    FormRegisterComponent, 
+    FormRegisterComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule, 
+    SharedModule
   ]
 })
 export class HomeModule { }

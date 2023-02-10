@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { TransactionService } from '../transaction.service';
 import { TableItems } from '../../shared/models/table-transaction.model';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { MessageErrorComponent } from '../../shared/message-error/message-error.component';
+import { MatDialog } from '@angular/material/dialog';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-transaction-table',
@@ -15,9 +20,30 @@ export class TransactionTableComponent implements OnInit {
 
   dataSource = this.ITEMS_TABLE;
 
-  constructor(private service: TransactionService) { }
+  constructor(
+    private service: TransactionService,
+    public dialog: MatDialog,
+  ) {
 
-  ngOnInit() {
-    this.service.list().subscribe(data => this.dataSource = data);
+    this.service.list()
+    .pipe(
+      catchError(error => {
+        this.onError('Lista de cursos não encontrada.');
+        console.log("Não carregou o Banco de Dados");
+        return of([]);
+      })
+    ).subscribe(data => this.dataSource = data);
   }
+
+  onError(errorMessage: string) {
+    this.dialog.open(MessageErrorComponent, {
+      data: errorMessage,
+    });
+  }
+
+  ngOnInit(): void {
+
+  }
+
+
 }
