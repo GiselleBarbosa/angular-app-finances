@@ -7,9 +7,9 @@ export class TypePipe implements PipeTransform {
 
   transform(value: string): string {
     switch (value) {
-      case 'revenue': return 'arrow_circle_up';
-      case 'expenses': return 'arrow_circle_down';
+      case 'Despesa': return 'arrow_circle_up';
+      case 'Receita': return 'arrow_circle_down';
     }
-    return 'arrow_circle_up';
+    return 'arrow_circle_down';
   }
 }
