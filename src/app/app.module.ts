@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './core/components/footer/footer.component';
 import { HeaderComponent } from './core/components/header/header.component';
 
+import { HttpClientModule } from '@angular/common/http';
 import { LoginModalComponent } from './core/components/login-modal/login-modal.component';
 
 
@@ -26,6 +27,7 @@ import { LoginModalComponent } from './core/components/login-modal/login-modal.c
     MaterialModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,11 @@
+{
+  "items": [
+    { "description": "Energia eletrica", "value": 249.85, "type": "Despesa" },
+    { "description": "agua ", "value": 125.85, "type": "Despesa" },
+    { "description": "Internet", "value": 99.99, "type": "Despesa" },
+    { "description": "Saude", "value": 300.05, "type": "Despesa" },
+    { "description": "Provento", "value": 2000.99, "type": "Receita" },
+    { "description": "Lazer", "value": 200.5, "type": "Despesa" },
+    { "description": "Provento", "value": 2800.01, "type": "Receita" }
+  ]
+}

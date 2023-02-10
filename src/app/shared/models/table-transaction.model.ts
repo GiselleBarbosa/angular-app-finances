@@ -1,6 +1,5 @@
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
+export interface TableItems {
+  description: string;
+  value: number;
+  type: string;
+ }
