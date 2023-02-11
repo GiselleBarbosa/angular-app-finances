@@ -9,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class TransactionFormComponent implements OnInit {
 
   form = new FormGroup({
-    description: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    description: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
     value: new FormControl('', [Validators.required]),
     type: new FormControl('', [Validators.required]),
   });

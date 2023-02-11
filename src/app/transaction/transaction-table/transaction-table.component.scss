@@ -7,19 +7,19 @@ table {
 }
 
 .red {
-  color: rgb(206, 40, 40);
+  color: #a41a1a;
 }
 
 .green {
-  color: green;
+  color: #008000;
 }
 
 .gray {
-  color: rgb(105, 105, 116);
+  color: #4e4e51;
 }
 
 @media(max-width: 460px){
- .type {
+ p {
     display: none
   }
 }

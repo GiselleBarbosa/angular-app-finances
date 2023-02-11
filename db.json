@@ -2,6 +2,8 @@
   "items": [
     { "description": "Energia eletrica", "value": 249.85, "type": "Despesa" },
     { "description": "Proventos ", "value": 4000.99, "type": "Receita" },
-    { "description": "Internet", "value": 99.99, "type": "Despesa" }
+    { "description": "Internet", "value": 99.99, "type": "Despesa" },
+    { "description": "Agua", "value": 45.95, "type": "Despesa" },
+    { "description": "Renda Extra", "value": 1000.00, "type": "Receita" }
   ]
 }
