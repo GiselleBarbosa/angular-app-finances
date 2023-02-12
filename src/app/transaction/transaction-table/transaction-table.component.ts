@@ -18,7 +18,7 @@ export class TransactionTableComponent implements OnInit {
 
   ITEMS_TABLE: TableItems[] = [];
 
-  displayedColumns: string[] = ['description', 'value', 'type', 'update', 'remove'];
+  displayedColumns: string[] = ['description', 'value', 'type', 'update', 'remove', 'status'];
 
   dataSource = this.ITEMS_TABLE;
 

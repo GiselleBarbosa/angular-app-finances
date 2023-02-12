@@ -13,10 +13,10 @@
   <ng-container matColumnDef="type">
     <th mat-header-cell *matHeaderCellDef> Tipo </th>
     <td mat-cell *matCellDef="let items">
-      <mat-icon [ngClass]="items.type == 'Despesa' ? 'red' : 'green'"
-        class=" text type float-start me-2">{{ items.type | typePipe}} 
-      </mat-icon> 
-        <p>{{items.type }}</p>
+      <mat-icon [ngClass]="items.type == 'Despesa' ? 'red' : 'green'" class=" text type float-start me-2">{{ items.type
+        | typePipe}}
+      </mat-icon>
+      <p>{{items.type }}</p>
     </td>
   </ng-container>
 
@@ -24,8 +24,7 @@
     <th mat-header-cell *matHeaderCellDef> Alterar </th>
     <td mat-cell *matCellDef="let items">
       {{items.update}}
-      <mat-icon [ngClass]="'gray'" 
-      (click)="onEdit()">edit</mat-icon>
+      <mat-icon [ngClass]="'gray'" (click)="onEdit()">edit</mat-icon>
     </td>
   </ng-container>
 
@@ -33,8 +32,18 @@
     <th mat-header-cell *matHeaderCellDef> Remover </th>
     <td mat-cell *matCellDef="let items">
       {{items.remove}}
-      <mat-icon [ngClass]="'red'"
-      (click)="onDelete()">delete</mat-icon>
+      <mat-icon class="red" (click)="onDelete()">delete</mat-icon>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <td mat-cell *matCellDef="let items">
+      <mat-icon
+      [ngClass]="items.status == 'Pendente' ? 'gray' : 'green'"
+      class="type float-start me-2">
+      {{ items.status | statusPipe }}
+      </mat-icon>
     </td>
   </ng-container>
 
