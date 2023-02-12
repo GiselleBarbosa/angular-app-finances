@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +9,12 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  btnlogin: string = 'login';
+  btnlogout: string = 'logout';
+
+  constructor(
+    private router: Router,
+    public afAuth: AngularFireAuth) { }
 
   ngOnInit(): void {
   }
@@ -17,5 +23,9 @@ export class HeaderComponent implements OnInit {
     e.preventDefault();
     console.log("Clicou no Login");
     this.router.navigate(['transaction']);
+  }
+
+  logout(): void {
+    this.afAuth.signOut();
   }
 }

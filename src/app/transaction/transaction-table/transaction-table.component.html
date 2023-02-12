@@ -24,7 +24,8 @@
     <th mat-header-cell *matHeaderCellDef> Alterar </th>
     <td mat-cell *matCellDef="let items">
       {{items.update}}
-      <mat-icon [ngClass]="'gray'" (click)="onEdit()">edit</mat-icon>
+      <mat-icon class="'gray'"
+      (click)="onEdit()">edit</mat-icon>
     </td>
   </ng-container>
 
@@ -32,7 +33,8 @@
     <th mat-header-cell *matHeaderCellDef> Remover </th>
     <td mat-cell *matCellDef="let items">
       {{items.remove}}
-      <mat-icon class="red" (click)="onDelete()">delete</mat-icon>
+      <mat-icon class="red"
+      (click)="onDelete()">delete</mat-icon>
     </td>
   </ng-container>
 
@@ -41,7 +43,8 @@
     <td mat-cell *matCellDef="let items">
       <mat-icon
       [ngClass]="items.status == 'Pendente' ? 'gray' : 'green'"
-      class="type float-start me-2">
+      class="type float-start me-2"
+      (click)="onShowStatus()">
       {{ items.status | statusPipe }}
       </mat-icon>
     </td>

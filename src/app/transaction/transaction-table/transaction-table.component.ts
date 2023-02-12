@@ -46,11 +46,15 @@ export class TransactionTableComponent implements OnInit {
   }
 
   onEdit() {
-    // alert("Clicou em UPDATE");
+    console.log("Clicou em EDITAR");
   }
 
   onDelete() {
-    // alert("Clicou em DELETE");
+    console.log("Clicou em DELETE");
+  }
+
+  onShowStatus() {
+    console.log("Clicou em Status");
   }
 
 

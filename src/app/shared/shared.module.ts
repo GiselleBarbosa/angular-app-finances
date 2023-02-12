@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+
+import { ButtonsComponent } from './buttons/buttons.component';
 import { MaterialModule } from './material/material.module';
 import { MessageErrorComponent } from './message-error/message-error.component';
-import { TypePipe } from './pipes/type.pipe';
-import { ButtonsComponent } from './buttons/buttons.component';
 import { StatusPipe } from './pipes/status.pipe';
+import { TypePipe } from './pipes/type.pipe';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { StatusPipe } from './pipes/status.pipe';
     MaterialModule,
     MessageErrorComponent,
     TypePipe,
-    StatusPipe
+    StatusPipe,
+    ButtonsComponent
   ]
 })
 export class SharedModule { }
