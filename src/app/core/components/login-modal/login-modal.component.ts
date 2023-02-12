@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+
 @Component({
   selector: 'app-login-modal',
   templateUrl: './login-modal.component.html',
@@ -11,7 +13,8 @@ export class LoginModalComponent implements OnInit {
   @Output() sendLogin = new EventEmitter();
 
   constructor(
-    private router: Router
+    private router: Router,
+    public afAuth: AngularFireAuth
   ) { }
 
   ngOnInit(): void {
@@ -21,6 +24,10 @@ export class LoginModalComponent implements OnInit {
     this.sendLogin.emit();
   }
 
- 
+  logout(): void {
+    this.afAuth.signOut();
+  }
+
+
 
 }

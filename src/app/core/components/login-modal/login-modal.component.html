@@ -17,14 +17,14 @@
 
               <div class="form-group mb-3" >
                 <label for="password" class="mb-2">Senha</label>
-                <input type="password" class="form-control" id="password" placeholder="Digute sua senha">
+                <input type="password" class="form-control" id="password" placeholder="Digite sua senha">
               </div>
 
               <div class="form-group form-check mb-3">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Lembrar de mim</label>
               </div>
-              
+
               <div class="button float-end">
 
                 <button type="button" class="btn btn-light m-1" data-bs-dismiss="modal">Fechar</button>
@@ -39,3 +39,14 @@
     </div>
   </div>
 </div>
+
+<div *ngIf="(afAuth.user | async )">
+  Usuário está logado
+
+</div>
+<div *ngIf="!(afAuth.user | async)">
+  Usuário não Autenticado
+</div>
+
+
+

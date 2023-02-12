@@ -5,10 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
-
+import { AngularFireModule } from '@angular/fire/compat';
 
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,8 +14,11 @@ import { FooterComponent } from './core/components/footer/footer.component';
 import { HeaderComponent } from './core/components/header/header.component';
 import { LoginModalComponent } from './core/components/login-modal/login-modal.component';
 import { SharedModule } from './shared/shared.module';
-import { initializeApp } from 'firebase/app';
+
 import { environment } from 'src/environments/environment';
+
+
+
 
 
 @NgModule({
@@ -27,11 +27,7 @@ import { environment } from 'src/environments/environment';
     FooterComponent,
     HeaderComponent,
     LoginModalComponent,
-    /*
 
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
-        */
   ],
   imports: [
     BrowserModule,
@@ -42,7 +38,12 @@ import { environment } from 'src/environments/environment';
     HttpClientModule,
     SharedModule,
 
+    AngularFireModule.initializeApp(environment.firebase)
+
+
   ],
+  exports: [AngularFireModule, HeaderComponent],
+
   providers: [],
   bootstrap: [AppComponent],
 })

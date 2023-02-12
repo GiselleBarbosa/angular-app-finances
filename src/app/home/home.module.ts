@@ -8,6 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 
 
+
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -16,8 +18,9 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    ReactiveFormsModule, 
-    SharedModule
+    ReactiveFormsModule,
+    SharedModule,
+    
   ]
 })
 export class HomeModule { }
