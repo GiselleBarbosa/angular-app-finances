@@ -30,8 +30,11 @@
   </div>
 
   <!-- <button type="submit"  -->
+ 
   <button 
-(click)="onAlertRegister()"
-  [disabled]="!formulario.valid" type="submit"
+  (click)="openDialog()"
+    [disabled]="!formulario.valid" type="submit"
   class="form-group btn btn-danger btn-sm float-end">Cadastrar</button>
 </form>
+
+

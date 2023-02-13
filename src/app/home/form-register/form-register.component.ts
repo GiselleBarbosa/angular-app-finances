@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { AlertsComponent } from 'src/app/shared/alerts/alerts.component';
 
 
 @Component({
@@ -9,13 +11,17 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class FormRegisterComponent implements OnInit {
 
+  @Input() title: string = '';
+  @Input() data: string = '';
+
   formulario = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
   });
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
+
 
   ngOnInit(): void {
   }
@@ -39,9 +45,11 @@ export class FormRegisterComponent implements OnInit {
     this.formulario.reset();
   }
 
-  onAlertRegister() {
+  /* Alert apos sucesso do registro  */
+
+  openDialog() {
     if (this.formulario.valid) {
-      alert("Cadastrado com sucesso");
+      this.dialog.open(AlertsComponent);
     }
   }
 }

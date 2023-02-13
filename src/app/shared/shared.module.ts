@@ -26,7 +26,8 @@ import { AlertsComponent } from './alerts/alerts.component';
     MessageErrorComponent,
     TypePipe,
     StatusPipe,
-    ButtonsComponent
+    ButtonsComponent,
+    AlertsComponent
   ]
 })
 export class SharedModule { }
