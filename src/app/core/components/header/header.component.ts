@@ -21,11 +21,13 @@ export class HeaderComponent implements OnInit {
 
   onLogin(e: Event) {
     e.preventDefault();
-    console.log("Clicou no Login");
+    console.log("login");
     this.router.navigate(['transaction']);
   }
 
-  logout(): void {
+  onlogout(): void {
+    console.log("logout");
+    this.router.navigate(['/']);
     this.afAuth.signOut();
   }
 }
