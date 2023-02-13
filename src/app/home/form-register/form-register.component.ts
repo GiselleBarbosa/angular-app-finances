@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { Router } from '@angular/router';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-
-
 
 @Component({
   selector: 'app-form-register',
@@ -34,12 +30,18 @@ export class FormRegisterComponent implements OnInit {
     if (this.formulario.valid) {
       console.log("success");
       this.resetar();
-    }  else {
+    } else {
       console.log("invalid form");
     }
   }
   /* Resetando formulario apos envio */
   resetar() {
     this.formulario.reset();
+  }
+
+  onAlertRegister() {
+    if (this.formulario.valid) {
+      alert("Cadastrado com sucesso");
+    }
   }
 }

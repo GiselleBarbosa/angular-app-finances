@@ -6,6 +6,7 @@ import { MaterialModule } from './material/material.module';
 import { MessageErrorComponent } from './message-error/message-error.component';
 import { StatusPipe } from './pipes/status.pipe';
 import { TypePipe } from './pipes/type.pipe';
+import { AlertsComponent } from './alerts/alerts.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { TypePipe } from './pipes/type.pipe';
     MessageErrorComponent,
     TypePipe,
     StatusPipe,
-    ButtonsComponent
+    ButtonsComponent,
+    AlertsComponent
   ],
   imports: [
     MaterialModule,
