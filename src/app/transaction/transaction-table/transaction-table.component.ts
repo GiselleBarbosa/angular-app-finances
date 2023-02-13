@@ -30,7 +30,7 @@ export class TransactionTableComponent implements OnInit {
     this.service.list()
       .pipe(
         catchError(error => {
-          this.onError('Erro ao listar as transaçoes.');
+          this.onError('Não foi possível exibir os extratos. Tente novamente mais tarde.');
           return of([]);
         })
       ).subscribe(data => this.dataSource = data);
