@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-transaction-form',
   templateUrl: './transaction-form.component.html',
@@ -9,7 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class TransactionFormComponent implements OnInit {
 
   form = new FormGroup({
-    description: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
+    name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
     value: new FormControl('', [Validators.required]),
     type: new FormControl('', [Validators.required]),
   });
@@ -17,13 +18,12 @@ export class TransactionFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
-  
-  getDataForm() {
-    let desc = this.form.controls['description'].value;
+    let desc = this.form.controls['name'].value;
     let value = this.form.controls['value'].value;
     let type = this.form.controls['type'].value;
-    console.log(desc, value, type);
-  }
+  };
 
+  onSubmit() {
+    console.log("Submitted");
+  };
 }

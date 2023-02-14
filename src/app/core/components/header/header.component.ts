@@ -17,13 +17,7 @@ export class HeaderComponent implements OnInit {
     public afAuth: AngularFireAuth) { }
 
   ngOnInit(): void {
-  }
-
-  onLogin(e: Event) {
-    e.preventDefault();
-    console.log("login");
-    this.router.navigate(['transaction']);
-  }
+  }  
 
   onlogout(): void {
     console.log("logout");

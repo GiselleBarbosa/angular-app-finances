@@ -1,13 +1,13 @@
-<form [formGroup]="form" onSubmit="">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="row-cols-12">
     <h2 class="mt-4">Cadastro</h2>
     <div class="itens col-12 mb-3">
       <div class="input-group mb-3 w-75">
         <div class="input-group-prepend">
-          <span class="input-group-text" id="description">Descrição</span>
+          <span class="input-group-text" id="name">Descrição</span>
         </div>
         <input type="text" class="form-control" 
-        formControlName="description" />
+        formControlName="name" />
       </div>
 
       <div class="input-group mb-3 w-25">
@@ -29,7 +29,7 @@
         </select>
       </div>
       <div class="btn-item">
-        <button (click)="getDataForm()" type="submit" class="btn btn-danger btn-item" >
+        <button type="submit" class="btn btn-danger btn-item" >
           Adicionar
         </button>
       </div>

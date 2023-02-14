@@ -1,8 +1,8 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-  <ng-container matColumnDef="description">
+  <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> Descrição </th>
-    <td mat-cell *matCellDef="let items"> {{items.description}} </td>
+    <td mat-cell *matCellDef="let items"> {{items.name}} </td>
   </ng-container>
 
   <ng-container matColumnDef="value">
@@ -24,7 +24,7 @@
     <th mat-header-cell *matHeaderCellDef> Alterar </th>
     <td mat-cell *matCellDef="let items">
       {{items.update}}
-      <mat-icon class="'gray'" (click)="onEdit()">edit</mat-icon>
+      <mat-icon class="'gray'">edit</mat-icon>
     </td>
   </ng-container>
 
@@ -32,7 +32,7 @@
     <th mat-header-cell *matHeaderCellDef> Remover </th>
     <td mat-cell *matCellDef="let items">
       {{items.remove}}
-      <mat-icon class="red" (click)="onDelete()">delete</mat-icon>
+      <mat-icon class="red">delete</mat-icon>
     </td>
   </ng-container>
 
@@ -40,7 +40,7 @@
     <th mat-header-cell *matHeaderCellDef> Status </th>
     <td mat-cell *matCellDef="let items">
       <mat-icon [ngClass]="items.status == 'Pendente' ? 'gray' : 'green'" class="type float-start me-2"
-        (click)="onShowStatus()">
+       >
         {{ items.status | status }}
       </mat-icon>
     </td>

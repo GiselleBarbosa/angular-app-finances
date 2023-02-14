@@ -1,12 +1,12 @@
 <h1>Cadastre-se para acessar</h1>
 
-<form class="form was-validated " [formGroup]="formulario" (ngSubmit)="onSubmit()">
+<form class="form was-validated " [formGroup]="formulario" (ngSubmit)="onSubmit()"  >
   <div class="form-group">
     <label for="name"><strong>Nome</strong></label>
     <input type="name" class="form-control" id="name" placeholder="Digite seu nome" formControlName="name" required>
 
     <div *ngIf="formulario.controls.name.dirty || formulario.controls.name.touched" class="invalid-feedback">
-      Nome é obrigátorio
+      Nome é obrigátorio e precisa ter no minímo 3 caracteres.
     </div>
 
   </div>
@@ -16,7 +16,7 @@
     <input type="email" class="form-control" placeholder="Digite seu email" formControlName="email" required>
 
     <div *ngIf="formulario.controls.email.dirty || formulario.controls.email.touched" class="invalid-feedback">
-      Email é obrigátorio
+      Email é obrigátorio.
     </div>
   </div>
 
@@ -25,16 +25,13 @@
     <input type="password" class="form-control" placeholder="Digite sua senha" formControlName="password" required>
 
     <div *ngIf="formulario.controls.password.dirty || formulario.controls.password.touched" class="invalid-feedback">
-      A senha é obrigátoria
+      A senha é obrigátoria e precisa ter 6 caracteres.
     </div>
   </div>
 
-  <!-- <button type="submit"  -->
- 
-  <button 
-  (click)="openDialog()"
-    [disabled]="!formulario.valid" type="submit"
-  class="form-group btn btn-danger btn-sm float-end">Cadastrar</button>
+  <button [disabled]="!formulario.valid" type="submit"
+    class="form-group btn btn-danger btn-sm float-end">
+    Cadastrar
+  </button>
 </form>
-
 
