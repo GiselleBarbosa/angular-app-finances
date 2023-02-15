@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, MaxLengthValidator, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { AlertsComponent } from 'src/app/shared/alerts/alerts.component';
 
@@ -23,11 +23,11 @@ export class FormRegisterComponent implements OnInit {
     this.addClassValidate;
   }
 
-  catchInputValues() {
-    /* let name = this.formulario.controls.name.value;
-      let email = this.formulario.controls.email.value;
-      let password = this.formulario.controls.password.value; */
-  }
+  /* catchInputValues() {
+       let name = this.formulario.controls.name.value;
+        let email = this.formulario.controls.email.value;
+        let password = this.formulario.controls.password.value; 
+    } */
 
 
   onSubmit(e: Event) {

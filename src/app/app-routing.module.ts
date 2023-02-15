@@ -3,13 +3,25 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
 
-  { path: 'home',
+ /*  {
+    path: 'home',
     loadChildren: () => import('./home/home.module')
       .then(m => m.HomeModule)
+  }, */
+  {
+    path: 'home',
+    loadChildren: () => import('./transaction/transaction.module')
+      .then(m => m.TransactionModule)
   },
-  { path: 'transaction',
+
+  {
+    path: 'transaction',
     loadChildren: () => import('./transaction/transaction.module')
       .then(m => m.TransactionModule)
   },
