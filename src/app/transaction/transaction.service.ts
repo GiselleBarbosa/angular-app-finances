@@ -1,7 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { delay, Observable, take } from 'rxjs';
+import { catchError, delay, EMPTY, map, Observable, take } from 'rxjs';
 import { Transaction } from '../shared/models/transaction-model';
 
 
@@ -10,28 +10,23 @@ import { Transaction } from '../shared/models/transaction-model';
 })
 export class TransactionService {
 
-  private readonly API = 'http://localhost:3000/items';
-
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
+  private API = 'http://localhost:3000/items';
 
   items?: Transaction[];
 
   constructor(private http: HttpClient) { }
 
-  getAllTransactions(): Observable<Transaction[]> {
+  getAllTransaction(): Observable<Transaction[]> {
     return this.http.get<Transaction[]>(this.API)
       .pipe(take(1),
         delay(1)
       );
   }
 
-  create() {
-    return this.http.post(this.API, this.items);
-  }
-
-
-
-
+  create(transaction: any): Observable<any> {
+    return this.http.post(this.API, transaction)
+    .pipe(
+      map((obj) => obj)
+    );
+  }  
 }

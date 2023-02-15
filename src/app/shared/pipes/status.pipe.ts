@@ -7,7 +7,7 @@ export class StatusPipe implements PipeTransform {
 
   transform(value: string): string {
     switch (value) {
-      case 'Pago': return 'task_alt';
+      case 'Pago': return 'done';
       case 'Pendente': return 'close';
     }
     return 'close';

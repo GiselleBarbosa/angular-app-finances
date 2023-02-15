@@ -1,9 +1,22 @@
 {
   "items": [
-    { "name": "Energia eletrica", "value": 249.85, "type": "Despesa", "status":"Pendente" },
-    { "name": "Proventos ", "value": 4000.99, "type": "Receita", "status":"Pendente" },
-    { "name": "Internet", "value": 99.99, "type": "Despesa", "status":"Pago" },
-    { "name": "Agua", "value": 45.95, "type": "Despesa", "status":"Pendente" },
-    { "name": "Renda Extra", "value": 1000.00, "type": "Receita", "status":"Pago" }
+    {
+      "name": "Agua",
+      "value": 123,
+      "type": "Despesa",
+      "id": 1
+    },
+    {
+      "name": "Luz",
+      "value": 99.99,
+      "type": "Despesa",
+      "id": 2
+    },
+    {
+      "name": "Salario",
+      "value": 2000.01,
+      "type": "Receita",
+      "id": 3
+    }
   ]
 }

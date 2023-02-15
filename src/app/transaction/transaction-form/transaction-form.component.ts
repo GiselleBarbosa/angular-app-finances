@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Transaction } from 'src/app/shared/models/transaction-model';
+import { TransactionService } from '../transaction.service';
 
 
 @Component({
@@ -8,21 +10,42 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./transaction-form.component.scss']
 })
 export class TransactionFormComponent implements OnInit {
+
+  private readonly API = 'http://localhost:3000/items';
+
+
   form = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
     value: new FormControl('', [Validators.required]),
     type: new FormControl('', [Validators.required]),
   });
 
-  constructor() { }
+  body: Transaction[] = [];
 
-  ngOnInit(): void {
-    let desc = this.form.controls['name'].value;
-    let value = this.form.controls['value'].value;
-    let type = this.form.controls['type'].value;
+  constructor(private service: TransactionService) { }
+
+  ngOnInit(): void { 
+
   };
 
   onSubmit() {
-    console.log("Submitted");
-  };
+    this.formValues();
+  }
+
+  formValues() {
+    let body = {
+      name: this.form.controls.name.value,
+      value: this.form.controls.value.value,
+      type: this.form.controls.type.value
+    };
+
+    this.service.create(body).subscribe(
+      response => {
+        console.log(response);
+      });
+  }
+
+
+  
 }
+

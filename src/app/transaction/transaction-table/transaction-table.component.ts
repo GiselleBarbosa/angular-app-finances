@@ -28,7 +28,7 @@ export class TransactionTableComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.service.getAllTransactions()
+    this.service.getAllTransaction()
       .pipe(
         catchError(error => {
           this.onError('Não foi possível exibir os extratos. Tente novamente mais tarde.');
