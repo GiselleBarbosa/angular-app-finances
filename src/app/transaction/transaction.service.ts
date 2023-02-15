@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { catchError, delay, EMPTY, map, Observable, take } from 'rxjs';
+import { delay, map, Observable, take } from 'rxjs';
 import { Transaction } from '../shared/models/transaction-model';
 
 
@@ -25,8 +25,8 @@ export class TransactionService {
 
   create(transaction: any): Observable<any> {
     return this.http.post(this.API, transaction)
-    .pipe(
-      map((obj) => obj)
-    );
-  }  
+      .pipe(
+        map((obj) => obj)
+      );
+  }
 }

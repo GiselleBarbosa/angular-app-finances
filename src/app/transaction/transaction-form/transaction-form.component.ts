@@ -24,12 +24,13 @@ export class TransactionFormComponent implements OnInit {
 
   constructor(private service: TransactionService) { }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
 
   };
 
   onSubmit() {
     this.formValues();
+    this.reload();
   }
 
   formValues() {
@@ -40,12 +41,15 @@ export class TransactionFormComponent implements OnInit {
     };
 
     this.service.create(body).subscribe(
-      response => {
-        console.log(response);
-      });
+      response => response
+    );
+  }
+
+  reload() {
+    location.reload();
   }
 
 
-  
+
 }
 

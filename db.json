@@ -1,21 +1,21 @@
 {
   "items": [
     {
-      "name": "Agua",
-      "value": 123,
-      "type": "Despesa",
+      "name": "agua",
+      "value": 49.9,
+      "type": "saida",
       "id": 1
     },
     {
-      "name": "Luz",
-      "value": 99.99,
-      "type": "Despesa",
+      "name": "teste",
+      "value": 30,
+      "type": "entrada",
       "id": 2
     },
     {
-      "name": "Salario",
-      "value": 2000.01,
-      "type": "Receita",
+      "name": "testeee",
+      "value": 1213,
+      "type": "saida",
       "id": 3
     }
   ]
