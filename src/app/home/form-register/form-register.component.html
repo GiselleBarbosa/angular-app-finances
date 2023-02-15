@@ -1,37 +1,75 @@
 <h1>Cadastre-se para acessar</h1>
 
-<form class="form was-validated " [formGroup]="formulario" (ngSubmit)="onSubmit()"  >
+<form class="form" [formGroup]="formulario" (ngSubmit)="onSubmit($event)">
   <div class="form-group">
-    <label for="name"><strong>Nome</strong></label>
-    <input type="name" class="form-control" id="name" placeholder="Digite seu nome" formControlName="name" required>
+    <label for="name">
+      <strong>Nome</strong>
+    </label>
+    <input
+      [ngClass]="addClassValidate('name')"
+      type="name"
+      class="form-control"
+      placeholder="Digite seu nome"
+      formControlName="name"
+      required
+    />
 
-    <div *ngIf="formulario.controls.name.dirty || formulario.controls.name.touched" class="invalid-feedback">
+    <div
+      *ngIf="formulario.controls.name.dirty || formulario.controls.name.touched"
+      class="invalid-feedback"
+    >
       Nome é obrigátorio e precisa ter no minímo 3 caracteres.
     </div>
-
   </div>
 
   <div class="form-group">
     <label for="email"><strong>Endereço de email</strong></label>
-    <input type="email" class="form-control" placeholder="Digite seu email" formControlName="email" required>
+    <input
+      [ngClass]="addClassValidate('name')"
+      type="email"
+      class="form-control"
+      placeholder="Digite seu email"
+      formControlName="email"
+      required
+    />
 
-    <div *ngIf="formulario.controls.email.dirty || formulario.controls.email.touched" class="invalid-feedback">
+    <div
+      *ngIf="
+        formulario.controls.email.dirty || formulario.controls.email.touched
+      "
+      class="invalid-feedback"
+    >
       Email é obrigátorio.
     </div>
   </div>
 
   <div class="form-group">
     <label for="password"><strong>Senha</strong></label>
-    <input type="password" class="form-control" placeholder="Digite sua senha" formControlName="password" required>
+    <input
+      [ngClass]="addClassValidate('name')"
+      type="password"
+      class="form-control"
+      placeholder="Digite sua senha"
+      formControlName="password"
+      required
+    />
 
-    <div *ngIf="formulario.controls.password.dirty || formulario.controls.password.touched" class="invalid-feedback">
+    <div
+      *ngIf="
+        formulario.controls.password.dirty ||
+        formulario.controls.password.touched
+      "
+      class="invalid-feedback"
+    >
       A senha é obrigátoria e precisa ter 6 caracteres.
     </div>
   </div>
 
-  <button [disabled]="!formulario.valid" type="submit"
-    class="form-group btn btn-danger btn-sm float-end">
+  <button
+    [disabled]="!formulario.valid"
+    type="submit"
+    class="form-group btn btn-danger btn-sm float-end"
+  >
     Cadastrar
   </button>
 </form>
-

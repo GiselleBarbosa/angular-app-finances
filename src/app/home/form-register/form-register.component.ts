@@ -20,29 +20,39 @@ export class FormRegisterComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.catchInputValues();
+    this.addClassValidate
   }
 
   catchInputValues() {
-  /* let name = this.formulario.controls.name.value;
-    let email = this.formulario.controls.email.value;
-    let password = this.formulario.controls.password.value; */
+    /* let name = this.formulario.controls.name.value;
+      let email = this.formulario.controls.email.value;
+      let password = this.formulario.controls.password.value; */
   }
 
 
-  onSubmit() {
+  onSubmit(e: Event) {
     if (this.formulario.valid) {
+      e.preventDefault();
       this.dialog.open(AlertsComponent);
       this.reset();
 
     } else {
       this.dialog.open(AlertsComponent);
-
     }
   }
   /* Resetando formulario apos envio */
   reset() {
     this.formulario.reset();
+  }
+
+  checkValidTouched(campo: string){
+    return !this.formulario.get(campo)?.valid && this.formulario.get(campo)?.touched
+  }
+
+  addClassValidate(campo: string) {
+    return {
+      'is-invalid': this.checkValidTouched(campo)
+    }
   }
 
 }
