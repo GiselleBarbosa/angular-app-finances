@@ -17,6 +17,18 @@
       "value": 1213,
       "type": "saida",
       "id": 3
+    },
+    {
+      "name": "ASASA",
+      "value": 121,
+      "type": "entrada",
+      "id": 4
+    },
+    {
+      "name": "dsds",
+      "value": 121,
+      "type": "entrada",
+      "id": 5
     }
   ]
 }

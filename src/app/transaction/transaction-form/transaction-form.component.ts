@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Transaction } from 'src/app/shared/models/transaction-model';
 import { TransactionService } from '../transaction.service';
 
@@ -12,7 +12,6 @@ import { TransactionService } from '../transaction.service';
 export class TransactionFormComponent implements OnInit {
 
   private readonly API = 'http://localhost:3000/items';
-
 
   form = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
@@ -48,8 +47,5 @@ export class TransactionFormComponent implements OnInit {
   reload() {
     location.reload();
   }
-
-
-
 }
 
