@@ -28,12 +28,6 @@
       "name": "salario",
       "value": 3010.99,
       "type": "entrada",
-      "id": 4
-    },
-    {
-      "name": "Lazer",
-      "value": 120.32,
-      "type": "saida",
       "id": 5
     }
   ]

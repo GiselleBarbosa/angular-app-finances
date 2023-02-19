@@ -16,7 +16,7 @@ export class TransactionComponent implements OnInit {
     value: new FormControl('', [Validators.required]),
     type: new FormControl('', [Validators.required]),
   });
- 
+
   incomes: number = 0;
   expense: number = 0;
   total: number = 0;
@@ -32,9 +32,10 @@ export class TransactionComponent implements OnInit {
   onSubmit() {
     this.formValues();
     this.typeValidator;
-    this.mostraValorNoCard();
     // this.reload();
   }
+
+
 
   formValues() {
     let body = {
@@ -43,11 +44,17 @@ export class TransactionComponent implements OnInit {
       type: this.form.controls.type.value
     };
 
-    this.service.create(body).subscribe(
-      response => response
-    );
-    return;
+    if (body.name && body.value && body.type != '' || null || undefined ) {
 
+      this.service.create(body).subscribe(
+        response => response
+      );
+
+      return;
+    }
+    else {
+      console.log("Operação não permitida");
+    }
   }
 
   reload() {
@@ -56,12 +63,9 @@ export class TransactionComponent implements OnInit {
 
   typeValidator() {
     let type = this.form.controls.type.value;
+    console.log(type);
     this.service.checkType(type);
   }
 
-  mostraValorNoCard() {
-    let value = this.form.controls.value.value;
-    console.log(value);
-    return value;
-  }
+
 }

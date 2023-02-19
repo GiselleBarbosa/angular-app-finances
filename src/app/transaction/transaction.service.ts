@@ -9,7 +9,6 @@ import { Transaction } from '../shared/models/transaction-model';
   providedIn: 'root'
 })
 
-
 export class TransactionService {
 
   private API = 'http://localhost:3000/items';
@@ -24,13 +23,6 @@ export class TransactionService {
         delay(1)
       );
   }
-
-  getValues(): Observable<Transaction[]> {
-    return this.http.get<Transaction[]>(this.API)
-      .pipe(take(1),
-        delay(1)
-      );
-    }
 
   create(transaction: any): Observable<any> {
     return this.http.post(this.API, transaction)
@@ -47,10 +39,6 @@ export class TransactionService {
     else if (type === 'saida') {
       console.log("escolheu SAIDA", type);
 
-    }
-    else {
-      console.log("TIPO INVALIDO");
-      return;
     }
   }
 
