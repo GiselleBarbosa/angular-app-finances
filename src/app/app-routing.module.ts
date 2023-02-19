@@ -9,17 +9,17 @@ const routes: Routes = [
     pathMatch: 'full'
   },
 
-  {
+ /*  {
     path: 'home',
     loadChildren: () => import('./home/home.module')
       .then(m => m.HomeModule)
-  },
-  /* {
+  }, */
+  {
     path: 'home',
     loadChildren: () => import('./transaction/transaction.module')
       .then(m => m.TransactionModule)
   },
- */
+
   {
     path: 'transaction',
     loadChildren: () => import('./transaction/transaction.module')

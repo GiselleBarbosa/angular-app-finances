@@ -8,6 +8,8 @@ import { Transaction } from '../shared/models/transaction-model';
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class TransactionService {
 
   private API = 'http://localhost:3000/items';
@@ -23,10 +25,46 @@ export class TransactionService {
       );
   }
 
+  getValues(): Observable<Transaction[]> {
+    return this.http.get<Transaction[]>(this.API)
+      .pipe(take(1),
+        delay(1)
+      );
+    }
+
   create(transaction: any): Observable<any> {
     return this.http.post(this.API, transaction)
       .pipe(
         map((obj) => obj)
       );
   }
+
+  checkType(type: any) {
+    if (type === 'entrada') {
+      console.log("escolheu ENTRADA", type);
+
+    }
+    else if (type === 'saida') {
+      console.log("escolheu SAIDA", type);
+
+    }
+    else {
+      console.log("TIPO INVALIDO");
+      return;
+    }
+  }
+
+  operations(type: any, currentValue: number, inputValue: number) {
+    if (type === 'entrada') {
+      currentValue + inputValue;
+    }
+    else if (type === 'saida') {
+      currentValue - inputValue;
+    }
+    else {
+      return;
+    }
+  }
 }
+
+

@@ -1,4 +1,5 @@
 <div class="container row-cols-12">
+
   <!-- Balance Cards -->
   <div class="cards">
     <mat-card class="card incomes">
@@ -11,17 +12,56 @@
     <mat-card class="card expense">
       <mat-card-title>Saída
         <mat-icon class="float-end text-danger">arrow_circle_down</mat-icon></mat-card-title>
-      <mat-card-subtitle><strong>R$ </strong> {{ incomes }}</mat-card-subtitle>
+      <mat-card-subtitle><strong>R$ </strong> {{ expense }}</mat-card-subtitle>
     </mat-card>
 
     <mat-card class="card total">
       <mat-card-title>Total
         <mat-icon class="float-end text-primary">monetization_on</mat-icon></mat-card-title>
-      <mat-card-subtitle><strong>R$ </strong> {{ incomes }}</mat-card-subtitle>
+      <mat-card-subtitle><strong>R$ </strong> {{ total }}</mat-card-subtitle>
     </mat-card>
   </div>
 
-  <app-transaction-form></app-transaction-form>
+  <!-- transaction form -->
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row-cols-12">
+      <h2 class="mt-4">Cadastro</h2>
+      <div class="itens col-12 mb-3">
+        <div class="input-group mb-3 w-75">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="name">Descrição</span>
+          </div>
+          <input type="text" class="form-control" formControlName="name" />
+        </div>
+
+        <div class="input-group mb-3 w-25">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="value">Valor</span>
+          </div>
+          <input type="number" class="form-control" formControlName="value" />
+        </div>
+
+        <div class="input-group mb-3 w-25">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="value">Tipo</span>
+          </div>
+          <select class="form-select" formControlName="type">
+            <option selected>Selecione</option>
+            <option value="entrada">Entrada</option>
+            <option value="saida">Saída</option>
+          </select>
+        </div>
+        <div class="btn-item">
+          <button type="submit" class="btn btn-danger btn-item">
+            Adicionar
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- Transaction table  -->
 
   <h2>Extrato</h2>
 

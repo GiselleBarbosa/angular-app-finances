@@ -2,32 +2,38 @@
   "items": [
     {
       "name": "agua",
-      "value": 49.9,
+      "value": 78.57,
       "type": "saida",
       "id": 1
     },
     {
-      "name": "teste",
-      "value": 30,
-      "type": "entrada",
+      "name": "luz",
+      "value": 148.52,
+      "type": "saida",
       "id": 2
     },
     {
-      "name": "testeee",
-      "value": 1213,
+      "name": "internet",
+      "value": 99.99,
       "type": "saida",
       "id": 3
     },
     {
-      "name": "ASASA",
-      "value": 121,
+      "name": "carro",
+      "value": 980.99,
+      "type": "saida",
+      "id": 4
+    },
+    {
+      "name": "salario",
+      "value": 3010.99,
       "type": "entrada",
       "id": 4
     },
     {
-      "name": "dsds",
-      "value": 121,
-      "type": "entrada",
+      "name": "Lazer",
+      "value": 120.32,
+      "type": "saida",
       "id": 5
     }
   ]
