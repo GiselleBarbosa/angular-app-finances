@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { delay, map, Observable, take } from 'rxjs';
-import { Transaction } from '../shared/models/transaction-model';
+import { map, Observable, take } from 'rxjs';
+import { Transactions } from '../shared/models/transactions';
 
 
 @Injectable({
@@ -13,16 +13,19 @@ export class TransactionService {
 
   private API = 'http://localhost:3000/items';
 
-  items: Transaction[] = [];
+  items$?: Observable<Transactions[]>;
 
   constructor(private http: HttpClient) { }
 
-  getAllTransaction(): Observable<Transaction[]> {
-    return this.http.get<Transaction[]>(this.API)
-      .pipe(take(1),
-        delay(1));
-    }
+  /*Retorna todos os items da API*/
+  getAllTransactions(): Observable<Transactions[]> {
+    return this.http.get<Transactions[]>(this.API)
+      .pipe(
+        take(1)
+      );
+  }
 
+  /*Cria uma nova transação*/
   createTransaction(transaction: {}): Observable<{}> {
     return this.http.post(this.API, transaction)
       .pipe(

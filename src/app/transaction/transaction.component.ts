@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Transaction } from '../shared/models/transaction-model';
+import { Transactions } from '../shared/models/transactions';
 import { TransactionService } from './transaction.service';
 
 
@@ -21,13 +21,11 @@ export class TransactionComponent implements OnInit {
   expense: number = 0;
   total: number = 0;
 
-  body: Transaction[] = [];
+  body: Transactions[] = [];
 
   constructor(private service: TransactionService) { }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   onSubmit() {
     this.formValues();

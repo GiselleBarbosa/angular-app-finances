@@ -29,6 +29,18 @@
       "value": 3890.79,
       "type": "saida",
       "id": 4
+    },
+    {
+      "name": "teste",
+      "value": 50,
+      "type": "entrada",
+      "id": 5
+    },
+    {
+      "name": "teste2",
+      "value": 1,
+      "type": "saida",
+      "id": 6
     }
   ]
 }

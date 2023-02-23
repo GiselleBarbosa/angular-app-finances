@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { Transaction } from './../../shared/models/transaction-model';
+import { Transactions } from '../../shared/models/transactions';
 import { MessageErrorComponent } from '../../shared/message-error/message-error.component';
 import { TransactionService } from '../transaction.service';
 
@@ -16,19 +16,17 @@ import { TransactionService } from '../transaction.service';
 })
 export class TransactionTableComponent implements OnInit {
 
-  ITEMS_TABLE: Transaction[] = [];
+  tableItems: Transactions[] = [];
 
   displayedColumns: string[] = ['name', 'value', 'type', 'update', 'remove'];
 
-  dataSource = this.ITEMS_TABLE;
+  dataSource = this.tableItems;
 
   constructor(
-    private service: TransactionService,
-    public dialog: MatDialog,
-  ) { }
+    private service: TransactionService, public dialog: MatDialog ) { }
 
   ngOnInit(): void {
-    this.service.getAllTransaction()
+    this.service.getAllTransactions()
       .pipe(
         catchError(error => {
           this.onError('Não foi possível exibir os extratos. Tente novamente mais tarde.');
