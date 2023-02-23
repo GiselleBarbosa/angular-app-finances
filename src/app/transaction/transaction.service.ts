@@ -13,36 +13,37 @@ export class TransactionService {
 
   private API = 'http://localhost:3000/items';
 
-  items?: Transaction[];
+  items: Transaction[] = [];
 
   constructor(private http: HttpClient) { }
 
   getAllTransaction(): Observable<Transaction[]> {
     return this.http.get<Transaction[]>(this.API)
       .pipe(take(1),
-        delay(1)
-      );
-  }
+        delay(1));
+    }
 
-  create(transaction: any): Observable<any> {
+  createTransaction(transaction: {}): Observable<{}> {
     return this.http.post(this.API, transaction)
       .pipe(
         map((obj) => obj)
       );
-  }
+  };
 
-  checkType(type: any) {
+  /*Verifica o tipo selecionado*/
+  checkTransactionType(type: any) {
     if (type === 'entrada') {
       console.log("escolheu ENTRADA", type);
 
     }
     else if (type === 'saida') {
       console.log("escolheu SAIDA", type);
-
     }
   }
 
-  operations(type: any, currentValue: number, inputValue: number) {
+  /*realiza a operação de acordo com tipo selecionado*/
+
+  calculate(type: any, currentValue: number, inputValue: number) {
     if (type === 'entrada') {
       currentValue + inputValue;
     }

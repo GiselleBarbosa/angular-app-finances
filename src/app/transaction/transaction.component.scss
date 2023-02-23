@@ -44,6 +44,10 @@
   border-radius: 5px;
 }
 
+.cadastro, .extrato {
+  font-size: 1.6em;
+}
+
 @media (max-width: 460px) {
   .itens {
     display: flex;
@@ -62,11 +66,10 @@
   }
 
   .btn-item {
-    margin-bottom: 2rem;
+    margin-bottom: 1.2rem;
     border-bottom: 1px solid #d4d1d1;
   }
 }
-
 
 @media (min-width: 461px) and (max-width: 531px) {
   .mat-card-title {

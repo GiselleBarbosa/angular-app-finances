@@ -2,7 +2,7 @@
   "items": [
     {
       "name": "agua",
-      "value": 78.57,
+      "value": 178.57,
       "type": "saida",
       "id": 1
     },
@@ -20,15 +20,15 @@
     },
     {
       "name": "carro",
-      "value": 980.99,
+      "value": 1280.99,
       "type": "saida",
       "id": 4
     },
     {
       "name": "salario",
-      "value": 3010.99,
-      "type": "entrada",
-      "id": 5
+      "value": 3890.79,
+      "type": "saida",
+      "id": 4
     }
   ]
 }

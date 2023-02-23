@@ -41,4 +41,5 @@ export class TransactionTableComponent implements OnInit {
       data: errorMessage,
     });
   }
+
 }

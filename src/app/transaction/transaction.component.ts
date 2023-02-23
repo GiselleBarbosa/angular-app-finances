@@ -13,7 +13,7 @@ export class TransactionComponent implements OnInit {
 
   form = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
-    value: new FormControl('', [Validators.required]),
+    value: new FormControl(0, [Validators.required]),
     type: new FormControl('', [Validators.required]),
   });
 
@@ -21,21 +21,19 @@ export class TransactionComponent implements OnInit {
   expense: number = 0;
   total: number = 0;
 
-
   body: Transaction[] = [];
 
   constructor(private service: TransactionService) { }
 
   ngOnInit() {
+
   }
 
   onSubmit() {
     this.formValues();
-    this.typeValidator;
-    // this.reload();
+    this.checkType();
+    this.reload();
   }
-
-
 
   formValues() {
     let body = {
@@ -44,27 +42,27 @@ export class TransactionComponent implements OnInit {
       type: this.form.controls.type.value
     };
 
-    if (body.name && body.value && body.type != '' || null || undefined ) {
-
-      this.service.create(body).subscribe(
+    if (body.name && body.value && body.type !== '' || null || undefined) {
+      this.service.createTransaction(body).subscribe(
         response => response
       );
 
-      return;
+      alert("Adicionado com sucesso!");
     }
     else {
-      console.log("Operação não permitida");
+      alert("Operação não permitida");
     }
+    return;
   }
 
   reload() {
     location.reload();
   }
 
-  typeValidator() {
+  checkType() {
     let type = this.form.controls.type.value;
+    this.service.checkTransactionType(type);
     console.log(type);
-    this.service.checkType(type);
   }
 
 
