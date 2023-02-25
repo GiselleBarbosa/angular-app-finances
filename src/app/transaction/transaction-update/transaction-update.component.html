@@ -1,0 +1,50 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="container">
+  <div class="row-cols-12">
+    <h2 class="mt-4 cadastro">Editar Transação</h2>
+    <div class="itens col-12 mb-5">
+      <div class="input-group mb-3 w-100">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="id">ID</span>
+        </div>
+        <input class="form-control" type="text" formControlName="id" readonly />
+      </div>
+
+      <div class="input-group mb-3 w-100">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="name">Descrição</span>
+        </div>
+        <input type="text" class="form-control" formControlName="name" />
+      </div>
+
+      <div class="input-group mb-3 w-25">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="value">Valor</span>
+        </div>
+        <input type="number" class="form-control" formControlName="value" />
+      </div>
+
+      <div class="input-group mb-3 w-25">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="value">Tipo</span>
+        </div>
+        <select class="form-select" formControlName="type">
+          <option value="entrada">Entrada</option>
+          <option value="saida">Saída</option>
+        </select>
+      </div>
+      <div class="btn-item mt-4">
+        <button type="submit" class="btn btn-danger btn-item me-3">
+          Confirmar
+        </button>
+
+        <button
+          type="submit"
+          (click)="onBack()"
+          class="btn btn-primary btn-item"
+        >
+          Voltar
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

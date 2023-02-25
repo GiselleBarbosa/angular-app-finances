@@ -14,15 +14,22 @@ export class TransactionService {
 
   constructor(private http: HttpClient) {}
 
-  /*Retorna todos os items da API*/
+  /*List all transactions */
   getAllTransactions(): Observable<Transactions[]> {
     return this.http.get<Transactions[]>(this.API).pipe(take(1), shareReplay());
   }
 
-  getByValue() {}
+  getTransactionsByID(id: string) {
+    return this.http.get<Transactions>(`${this.API}/${id}`);
+  }
 
-  /*Cria uma nova transação*/
+  /*Create new transaction*/
   createTransaction(transaction: {}): Observable<{}> {
+    return this.http.post(this.API, transaction).pipe(map((obj) => obj));
+  }
+
+  /*Delete Transaction*/
+  deleteTransaction(transaction: {}): Observable<{}> {
     return this.http.post(this.API, transaction).pipe(map((obj) => obj));
   }
 

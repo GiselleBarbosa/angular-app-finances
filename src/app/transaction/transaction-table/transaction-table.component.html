@@ -1,4 +1,9 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z6">
+  <ng-container matColumnDef="ID">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let items">{{ items.id }}</td>
+  </ng-container>
+
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Descrição</th>
     <td mat-cell *matCellDef="let items">{{ items.name | titlecase }}</td>
@@ -25,7 +30,7 @@
     <th mat-header-cell *matHeaderCellDef>Alterar</th>
     <td mat-cell *matCellDef="let items">
       {{ items.update }}
-      <mat-icon class="'gray'">edit</mat-icon>
+      <mat-icon class="'gray'" (click)="onUpdate(items)">edit</mat-icon>
     </td>
   </ng-container>
 
@@ -33,7 +38,7 @@
     <th mat-header-cell *matHeaderCellDef>Remover</th>
     <td mat-cell *matCellDef="let items">
       {{ items.remove }}
-      <mat-icon class="red">delete</mat-icon>
+      <mat-icon class="red" (click)="onDelete()">delete</mat-icon>
     </td>
   </ng-container>
 

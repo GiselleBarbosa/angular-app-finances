@@ -6,9 +6,14 @@ import { TransactionRoutingModule } from './transaction-routing.module';
 import { TransactionComponent } from './transaction.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TransactionTableComponent } from './transaction-table/transaction-table.component';
+import { TransactionUpdateComponent } from './transaction-update/transaction-update.component';
 
 @NgModule({
-  declarations: [TransactionComponent, TransactionTableComponent],
+  declarations: [
+    TransactionComponent,
+    TransactionTableComponent,
+    TransactionUpdateComponent,
+  ],
   imports: [
     CommonModule,
     TransactionRoutingModule,

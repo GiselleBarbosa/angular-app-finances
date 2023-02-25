@@ -7,6 +7,8 @@ import { catchError } from 'rxjs/operators';
 import { Transactions } from '../../shared/models/transactions';
 import { MessageErrorComponent } from '../../shared/message-error/message-error.component';
 import { TransactionService } from '../transaction.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { transition } from '@angular/animations';
 
 @Component({
   selector: 'app-transaction-table',
@@ -16,11 +18,23 @@ import { TransactionService } from '../transaction.service';
 export class TransactionTableComponent implements OnInit {
   tableItems: Transactions[] = [];
 
-  displayedColumns: string[] = ['name', 'value', 'type', 'update', 'remove'];
+  displayedColumns: string[] = [
+    'ID',
+    'name',
+    'value',
+    'type',
+    'update',
+    'remove',
+  ];
 
   dataSource = this.tableItems;
 
-  constructor(private service: TransactionService, public dialog: MatDialog) {}
+  constructor(
+    private service: TransactionService,
+    public dialog: MatDialog,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.service
@@ -34,11 +48,20 @@ export class TransactionTableComponent implements OnInit {
         })
       )
       .subscribe((data) => (this.dataSource = data));
+    console.log('GET WORKS');
   }
 
   onError(errorMessage: string) {
     this.dialog.open(MessageErrorComponent, {
       data: errorMessage,
     });
+  }
+
+  onDelete() {
+    console.log('clicou no botão delete');
+  }
+
+  onUpdate(items: Transactions) {
+    this.router.navigate(['update', items.id], { relativeTo: this.route });
   }
 }
