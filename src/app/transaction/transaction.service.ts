@@ -1,46 +1,37 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { map, Observable, take } from 'rxjs';
+import { map, Observable, shareReplay, take } from 'rxjs';
 import { Transactions } from '../shared/models/transactions';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class TransactionService {
-
   private API = 'http://localhost:3000/items';
 
   items$?: Observable<Transactions[]>;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   /*Retorna todos os items da API*/
   getAllTransactions(): Observable<Transactions[]> {
-    return this.http.get<Transactions[]>(this.API)
-      .pipe(
-        take(1)
-      );
+    return this.http.get<Transactions[]>(this.API).pipe(take(1), shareReplay());
   }
+
+  getByValue() {}
 
   /*Cria uma nova transação*/
   createTransaction(transaction: {}): Observable<{}> {
-    return this.http.post(this.API, transaction)
-      .pipe(
-        map((obj) => obj)
-      );
-  };
+    return this.http.post(this.API, transaction).pipe(map((obj) => obj));
+  }
 
   /*Verifica o tipo selecionado*/
   checkTransactionType(type: any) {
     if (type === 'entrada') {
-      console.log("escolheu ENTRADA", type);
-
-    }
-    else if (type === 'saida') {
-      console.log("escolheu SAIDA", type);
+      console.log('escolheu ENTRADA', type);
+    } else if (type === 'saida') {
+      console.log('escolheu SAIDA', type);
     }
   }
 
@@ -49,14 +40,10 @@ export class TransactionService {
   calculate(type: any, currentValue: number, inputValue: number) {
     if (type === 'entrada') {
       currentValue + inputValue;
-    }
-    else if (type === 'saida') {
+    } else if (type === 'saida') {
       currentValue - inputValue;
-    }
-    else {
+    } else {
       return;
     }
   }
 }
-
-

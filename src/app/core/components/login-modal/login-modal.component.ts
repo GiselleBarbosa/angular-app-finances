@@ -4,19 +4,15 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login-modal',
   templateUrl: './login-modal.component.html',
-  styleUrls: ['./login-modal.component.scss']
+  styleUrls: ['./login-modal.component.scss'],
 })
 export class LoginModalComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onLogin() {
-    console.log("login");
+    console.log('login');
     this.router.navigate(['transaction']);
   }
-
-
 }

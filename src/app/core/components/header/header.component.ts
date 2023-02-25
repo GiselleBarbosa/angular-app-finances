@@ -5,22 +5,18 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-
   btnlogin: string = 'login';
   btnlogout: string = 'logout';
 
-  constructor(
-    private router: Router,
-    public afAuth: AngularFireAuth) { }
+  constructor(private router: Router, public afAuth: AngularFireAuth) {}
 
-  ngOnInit(): void {
-  }  
+  ngOnInit(): void {}
 
   onlogout(): void {
-    console.log("logout");
+    console.log('logout');
     this.router.navigate(['/']);
     this.afAuth.signOut();
   }

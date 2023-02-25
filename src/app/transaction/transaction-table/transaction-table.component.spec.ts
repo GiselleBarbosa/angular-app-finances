@@ -8,9 +8,8 @@ describe('TransactionFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TransactionTableComponent]
-    })
-      .compileComponents();
+      declarations: [TransactionTableComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TransactionTableComponent);
     component = fixture.componentInstance;

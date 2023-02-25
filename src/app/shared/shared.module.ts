@@ -8,26 +8,22 @@ import { StatusPipe } from './pipes/status.pipe';
 import { TypePipe } from './pipes/type.pipe';
 import { AlertsComponent } from './alerts/alerts.component';
 
-
 @NgModule({
   declarations: [
     MessageErrorComponent,
     TypePipe,
     StatusPipe,
     ButtonsComponent,
-    AlertsComponent
+    AlertsComponent,
   ],
-  imports: [
-    MaterialModule,
-    CommonModule
-  ],
+  imports: [MaterialModule, CommonModule],
   exports: [
     MaterialModule,
     MessageErrorComponent,
     TypePipe,
     StatusPipe,
     ButtonsComponent,
-    AlertsComponent
-  ]
+    AlertsComponent,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

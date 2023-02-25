@@ -7,17 +7,8 @@ import { FormRegisterComponent } from './form-register/form-register.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 
-
 @NgModule({
-  declarations: [
-    HomeComponent,
-    FormRegisterComponent,
-  ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    ReactiveFormsModule,
-    SharedModule,
-  ]
+  declarations: [HomeComponent, FormRegisterComponent],
+  imports: [CommonModule, HomeRoutingModule, ReactiveFormsModule, SharedModule],
 })
-export class HomeModule { }
+export class HomeModule {}

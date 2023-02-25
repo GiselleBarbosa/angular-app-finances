@@ -7,17 +7,13 @@ import { TransactionComponent } from './transaction.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TransactionTableComponent } from './transaction-table/transaction-table.component';
 
-
 @NgModule({
-  declarations: [
-    TransactionComponent,
-    TransactionTableComponent,
-  ],
+  declarations: [TransactionComponent, TransactionTableComponent],
   imports: [
     CommonModule,
     TransactionRoutingModule,
-    ReactiveFormsModule, 
-    SharedModule
-  ]
+    ReactiveFormsModule,
+    SharedModule,
+  ],
 })
-export class TransactionModule { }
+export class TransactionModule {}

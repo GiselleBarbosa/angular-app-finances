@@ -13,13 +13,12 @@ import { HeaderComponent } from './core/components/header/header.component';
 import { LoginModalComponent } from './core/components/login-modal/login-modal.component';
 import { SharedModule } from './shared/shared.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     LoginModalComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,12 +28,10 @@ import { SharedModule } from './shared/shared.module';
     ReactiveFormsModule,
     HttpClientModule,
     SharedModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
   ],
-  exports: [
-    AngularFireModule,
-  ],
+  exports: [AngularFireModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

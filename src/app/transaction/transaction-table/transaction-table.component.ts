@@ -8,30 +8,32 @@ import { Transactions } from '../../shared/models/transactions';
 import { MessageErrorComponent } from '../../shared/message-error/message-error.component';
 import { TransactionService } from '../transaction.service';
 
-
 @Component({
   selector: 'app-transaction-table',
   templateUrl: './transaction-table.component.html',
-  styleUrls: ['./transaction-table.component.scss']
+  styleUrls: ['./transaction-table.component.scss'],
 })
 export class TransactionTableComponent implements OnInit {
-
   tableItems: Transactions[] = [];
 
   displayedColumns: string[] = ['name', 'value', 'type', 'update', 'remove'];
 
   dataSource = this.tableItems;
 
-  constructor(
-    private service: TransactionService, public dialog: MatDialog ) { }
+  constructor(private service: TransactionService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.service.getAllTransactions()
+    this.service
+      .getAllTransactions()
       .pipe(
-        catchError(error => {
-          this.onError('Não foi possível exibir os extratos. Tente novamente mais tarde.');
+        catchError((error) => {
+          this.onError(
+            'Não foi possível exibir os extratos. Tente novamente mais tarde.'
+          );
           return of([]);
-        })).subscribe(data => this.dataSource = data);
+        })
+      )
+      .subscribe((data) => (this.dataSource = data));
   }
 
   onError(errorMessage: string) {
@@ -39,5 +41,4 @@ export class TransactionTableComponent implements OnInit {
       data: errorMessage,
     });
   }
-
 }

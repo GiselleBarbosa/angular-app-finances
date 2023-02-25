@@ -5,15 +5,14 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyAPzboGBtJJPiuXQj9MyoFSO7H6U7aOARw",
-    authDomain: "finance-angular-8ef80.firebaseapp.com",
-    projectId: "finance-angular-8ef80",
-    storageBucket: "finance-angular-8ef80.appspot.com",
-    messagingSenderId: "73934019639",
-    appId: "1:73934019639:web:b5875eaaa4349124b4b3b2"
-  }
+    apiKey: 'AIzaSyAPzboGBtJJPiuXQj9MyoFSO7H6U7aOARw',
+    authDomain: 'finance-angular-8ef80.firebaseapp.com',
+    projectId: 'finance-angular-8ef80',
+    storageBucket: 'finance-angular-8ef80.appspot.com',
+    messagingSenderId: '73934019639',
+    appId: '1:73934019639:web:b5875eaaa4349124b4b3b2',
+  },
 };
-
 
 /*
  * For easier debugging in development mode, you can import the following file

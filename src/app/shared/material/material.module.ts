@@ -11,7 +11,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-
 @NgModule({
   exports: [
     MatInputModule,
@@ -23,7 +22,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatIconModule,
     MatSidenavModule,
     MatTableModule,
-    MatDialogModule
-  ]
+    MatDialogModule,
+  ],
 })
-export class MaterialModule { }
+export class MaterialModule {}
