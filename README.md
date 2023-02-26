@@ -1,27 +1,44 @@
-# AppFinances
+<h1 align="center"> Finances </h1> <br/>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
+<p align="center">
+  <a href="#-tecnologias">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-licença">License</a>
+</p>
 
-## Development server
+## 💻 Project
+<br>
+<p align="center">
+The Finances project aims to help organize the expenses and monthly billing of its users. Built in angular for scalability. <br/>
+</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🔖 Layout
+<br>
+<p align="center">
+  <img alt="projeto DevLinks" src="https://raw.githubusercontent.com/TiagoBarbosa88/app-finances/master/src/assets/img/capa.png" width="100%">
+</p>
 
-## Code scaffolding
+## 🚀 Technologies 
+<br>
+This project was developed with the following technologies:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular
+- Typescript
+- HTML e CSS
+- Git e Github
+- Figma
+- Angular Material 
+- Bootstrap
 
-## Build
+## :memo: License
+<br>
+This project is licensed under the MIT. <p align="center">
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
+</p>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+2023 © FINANCES
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Developed by Giselle & Tiago Barbosa :wave:
