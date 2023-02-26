@@ -1,4 +1,4 @@
-# AppFinances
+<h1 align="center"> Finances </h1> <br/>
 
 <p align="center">
   <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 
