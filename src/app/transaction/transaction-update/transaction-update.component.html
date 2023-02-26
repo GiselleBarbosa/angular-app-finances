@@ -1,50 +1,47 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()" class="container">
-  <div class="row-cols-12">
-    <h2 class="mt-4 cadastro">Editar Transação</h2>
-    <div class="itens col-12 mb-5">
-      <div class="input-group mb-3 w-100">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="id">ID</span>
-        </div>
-        <input class="form-control" type="text" formControlName="id" readonly />
-      </div>
 
-      <div class="input-group mb-3 w-100">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="name">Descrição</span>
-        </div>
-        <input type="text" class="form-control" formControlName="name" />
-      </div>
+  <h2 class="mt-4">Editar Transação</h2>
+  <div class="container">
+    <mat-form-field appearance="fill" class="id">
+      <mat-label>ID</mat-label>
+      <input matInput [formControl]="form.controls.id" readonly>
+    </mat-form-field>
+  </div>
 
-      <div class="input-group mb-3 w-25">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="value">Valor</span>
-        </div>
-        <input type="number" class="form-control" formControlName="value" />
-      </div>
+  <div class="container">
+    <mat-form-field appearance="fill" class="w-50 me-4">
+      <mat-label>Descrição</mat-label>
+      <input matInput [formControl]="form.controls.name" required>
+      <mat-error *ngIf="form.controls.name.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
 
-      <div class="input-group mb-3 w-25">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="value">Tipo</span>
-        </div>
-        <select class="form-select" formControlName="type">
-          <option value="entrada">Entrada</option>
-          <option value="saida">Saída</option>
-        </select>
-      </div>
-      <div class="btn-item mt-4">
-        <button type="submit" class="btn btn-danger btn-item me-3">
-          Confirmar
-        </button>
+  <div class="container">
+    <mat-form-field appearance="fill" floatLabel="always" class="w-25">
+      <mat-label>Valor</mat-label>
+      <input matInput type="number" class="example-right-align" formControlName="value">
+    </mat-form-field>
+    <mat-error *ngIf="form.controls.value.invalid">{{getErrorMessage()}}</mat-error>
+  </div>
 
-        <button
-          type="submit"
-          (click)="onBack()"
-          class="btn btn-primary btn-item"
-        >
-          Voltar
-        </button>
-      </div>
+  <div class="container">
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione o tipo da operação</mat-label>
+      <mat-select formControlName="type" id="type">
+        <mat-option value="entrada">Entrada</mat-option>
+        <mat-option value="saida">Saída</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="btn-container mt-3">
+      <button mat-raised-button color="secondary" type="submit" class="bg-danger me-2">
+        Confirmar
+      </button>
+
+      <button mat-raised-button (click)="onBack()">
+        Voltar
+      </button>
     </div>
+
   </div>
 </form>

@@ -19,6 +19,7 @@ export class TransactionService {
     return this.http.get<Transactions[]>(this.API).pipe(take(1), shareReplay());
   }
 
+  /* Get transaction py ID*/
   getTransactionsByID(id: string) {
     return this.http.get<Transactions>(`${this.API}/${id}`);
   }
@@ -30,7 +31,7 @@ export class TransactionService {
 
   /*Delete Transaction*/
   deleteTransaction(transaction: {}): Observable<{}> {
-    return this.http.post(this.API, transaction).pipe(map((obj) => obj));
+    return this.http.delete(this.API, transaction).pipe(map((obj) => obj));
   }
 
   /*Verifica o tipo selecionado*/

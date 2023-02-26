@@ -37,4 +37,12 @@ export class TransactionUpdateComponent implements OnInit {
   onBack() {
     this.router.navigate(['']);
   }
+
+  getErrorMessage() {
+    if (this.form.controls.name.hasError('required')) {
+      return 'Digite uma descrição válida';
+    }
+
+    return this.form.controls.name.hasError('email') ? 'Verifique o campo preenchido' : '';
+  }
 }
