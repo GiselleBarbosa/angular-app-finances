@@ -34,6 +34,7 @@ This project was developed with the following technologies:
 - Figma
 - Angular Material
 - Bootstrap
+- API with Json-server
 
 ## :memo: License
 
