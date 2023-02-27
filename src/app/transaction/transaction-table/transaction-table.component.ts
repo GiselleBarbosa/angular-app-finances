@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
-import { of } from 'rxjs';
+import { of, pipe } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { Transactions } from '../../shared/models/transactions';
@@ -33,7 +33,7 @@ export class TransactionTableComponent implements OnInit {
     public dialog: MatDialog,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.service
@@ -55,11 +55,12 @@ export class TransactionTableComponent implements OnInit {
     });
   }
 
-  onDelete() {
-    console.log('clicou no botão delete');
+  onDelete(items: Transactions) {
+    this.service.delete(items.id).subscribe();
+    location.reload();
   }
 
-  onUpdate(items: Transactions) {
+  getRouteParams(items: Transactions) {
     this.router.navigate(['update', items.id], { relativeTo: this.route });
   }
 }

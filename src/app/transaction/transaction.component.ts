@@ -26,14 +26,16 @@ export class TransactionComponent implements OnInit {
 
   body?: Observable<Transactions[]>;
 
-  constructor(private service: TransactionService) {}
+  constructor(private service: TransactionService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  onSubmit() {
-    this.formValues();
-    this.checkType();
-    this.reload();
+  onSave() {
+    if (this.form.valid) {
+      this.formValues();
+      this.checkType();
+    }
+    return;
   }
 
   formValues() {
@@ -50,11 +52,9 @@ export class TransactionComponent implements OnInit {
     } else {
       alert('Operação não permitida');
     }
-    return;
-  }
-
-  reload() {
     location.reload();
+
+    return;
   }
 
   checkType() {

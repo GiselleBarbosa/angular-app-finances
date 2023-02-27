@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Luz",
-      "value": 356.99,
+      "value": 1000.05,
       "type": "saida"
     },
     {
@@ -19,21 +19,15 @@
       "type": "entrada"
     },
     {
-      "name": "carro",
-      "value": 1280.99,
+      "name": "Internet",
+      "value": 99.99,
       "type": "saida",
       "id": 4
     },
     {
-      "name": "salario",
-      "value": 3890.79,
-      "type": "entrada",
-      "id": 5
-    },
-    {
-      "id": 6,
-      "name": "Renda extra",
-      "value": 1000.25,
+      "id": 5,
+      "name": "editado",
+      "value": 123999,
       "type": "entrada"
     }
   ]

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Validators, FormBuilder } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { Transactions } from 'src/app/shared/models/transactions';
 import { TransactionService } from '../transaction.service';
-import { map, pipe } from 'rxjs';
+import { pipe } from 'rxjs';
 
 @Component({
   selector: 'app-transaction-update',
@@ -24,12 +24,12 @@ export class TransactionUpdateComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private service: TransactionService
-  ) {}
+  ) { }
 
   ngOnInit() {
     let transaction: Transactions = this.route.snapshot.data['transaction'];
     this.form.patchValue({
-      id: transaction.id,
+      id: transaction.id ,
       name: transaction.name,
       value: transaction.value,
       type: transaction.type,
@@ -44,9 +44,12 @@ export class TransactionUpdateComponent implements OnInit {
     const transaction = this.form.value;
     const id = this.form.controls.id.value;
 
-    this.service
-      .update(id, transaction)
-      .subscribe(pipe((response) => (response = transaction)));
+    this.service.update(id, transaction).subscribe(
+      pipe(
+        (response) => (
+          response = transaction
+        ))
+    );
 
     return this.onBack();
   }
