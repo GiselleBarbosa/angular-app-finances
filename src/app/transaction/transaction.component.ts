@@ -16,7 +16,7 @@ export class TransactionComponent implements OnInit {
       Validators.minLength(3),
       Validators.maxLength(15),
     ]),
-    value: new FormControl(0, [Validators.required]),
+    value: new FormControl(null, [Validators.required]),
     type: new FormControl('', [Validators.required]),
   });
 
@@ -26,9 +26,9 @@ export class TransactionComponent implements OnInit {
 
   body?: Observable<Transactions[]>;
 
-  constructor(private service: TransactionService) {}
+  constructor(private service: TransactionService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   onSubmit() {
     this.formValues();
@@ -61,5 +61,24 @@ export class TransactionComponent implements OnInit {
     let type = this.form.controls.type.value;
     this.service.checkTransactionType(type);
     console.log(type);
+  }
+
+  getErrorMessage() {
+    if (this.form.controls.name.hasError('required')) {
+      return 'Este campo precisa ser preenchido.';
+    }
+
+    if (this.form.controls.value.hasError('required')) {
+      return 'Este campo precisa ser preenchido.';
+    }
+
+    if (this.form.controls.value.hasError('required')) {
+      return 'Verifique os dados digitados.';
+
+    } else {
+      return this.form.controls.name.hasError('name')
+        ? 'Erro.'
+        : '';
+    }
   }
 }

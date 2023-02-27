@@ -2,75 +2,70 @@
   <!-- Balance Cards -->
   <div class="cards">
     <mat-card class="card incomes">
-      <mat-card-title
-        >Entrada
+      <mat-card-title>Entrada
         <mat-icon class="float-end text-success">arrow_circle_up</mat-icon>
       </mat-card-title>
       <mat-card-subtitle><strong>R$ </strong>{{ incomes }}</mat-card-subtitle>
     </mat-card>
 
     <mat-card class="card expense">
-      <mat-card-title
-        >Saída
-        <mat-icon class="float-end text-danger"
-          >arrow_circle_down</mat-icon
-        ></mat-card-title
-      >
+      <mat-card-title>Saída
+        <mat-icon class="float-end text-danger">arrow_circle_down</mat-icon></mat-card-title>
       <mat-card-subtitle><strong>R$ </strong> {{ expense }}</mat-card-subtitle>
     </mat-card>
 
     <mat-card class="card total">
-      <mat-card-title
-        >Total
-        <mat-icon class="float-end text-primary"
-          >monetization_on</mat-icon
-        ></mat-card-title
-      >
+      <mat-card-title>Total
+        <mat-icon class="float-end text-primary">monetization_on</mat-icon></mat-card-title>
       <mat-card-subtitle><strong>R$ </strong> {{ total }}</mat-card-subtitle>
     </mat-card>
   </div>
 
   <!-- transaction form -->
+  <h2 class="mt-4 cadastro">Cadastro</h2>
 
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="row-cols-12">
-      <h2 class="mt-4 cadastro">Cadastro</h2>
-      <div class="itens col-12 mb-3">
-        <div class="input-group mb-3 w-75">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="name">Descrição</span>
-          </div>
-          <input type="text" class="form-control" formControlName="name" />
-        </div>
+    <div class="itens">
 
-        <div class="input-group mb-3 w-25">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="value">Valor</span>
-          </div>
-          <input type="number" class="form-control" formControlName="value" />
-        </div>
+      <mat-form-field appearance="fill" class="w-100">
+        <mat-label>Descrição</mat-label>
+        <input matInput formControlName="name" id="name" />
+        <mat-error *ngIf="form.controls.name.invalid">{{
+          getErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
 
-        <div class="input-group mb-3 w-25">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="value">Tipo</span>
-          </div>
-          <select class="form-select" formControlName="type">
-            <option value="entrada">Entrada</option>
-            <option value="saida">Saída</option>
-          </select>
-        </div>
-        <div class="btn-item">
-          <button type="submit" class="btn btn-danger btn-item">
-            Adicionar
-          </button>
-        </div>
+      <mat-form-field appearance="fill" class="w-25">
+        <mat-label>Valor</mat-label>
+        <input type="number" matInput formControlName="value" id="value" />
+        <mat-error *ngIf="form.controls.value.invalid">{{
+          getErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="w-50">
+        <mat-label>Tipo de operação</mat-label>
+        <mat-select formControlName="type" id="type">
+          <mat-option value="entrada">Entrada</mat-option>
+          <mat-option value="saida">Saída</mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.controls.type.invalid">{{
+          getErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+
+      <div class="btn-item">
+        <button class="mb-3 bg-danger" mat-fab>
+          <mat-icon>save</mat-icon>
+        </button>
       </div>
     </div>
+
   </form>
 
   <!-- Transaction table  -->
 
-  <h2 class="extrato">Extrato</h2>
+  <h2 class="extrato mb-3 mt-2">Extrato</h2>
 
   <div class="mb-5">
     <app-transaction-table></app-transaction-table>
