@@ -26,14 +26,14 @@ export class TransactionComponent implements OnInit {
 
   body?: Observable<Transactions[]>;
 
-  constructor(private service: TransactionService) { }
+  constructor(private service: TransactionService) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   onSubmit() {
     this.formValues();
     this.checkType();
-    // this.reload();
+    this.reload();
   }
 
   formValues() {
@@ -74,11 +74,8 @@ export class TransactionComponent implements OnInit {
 
     if (this.form.controls.value.hasError('required')) {
       return 'Verifique os dados digitados.';
-
     } else {
-      return this.form.controls.name.hasError('name')
-        ? 'Erro.'
-        : '';
+      return this.form.controls.name.hasError('name') ? 'Erro.' : '';
     }
   }
 }

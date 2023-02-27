@@ -29,6 +29,12 @@
       "value": 3890.79,
       "type": "entrada",
       "id": 5
+    },
+    {
+      "id": 6,
+      "name": "Renda extra",
+      "value": 1000.25,
+      "type": "entrada"
     }
   ]
 }

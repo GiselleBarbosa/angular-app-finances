@@ -15,7 +15,13 @@
     <div class="form-field">
       <mat-form-field appearance="fill" floatLabel="always" class="w-25">
         <mat-label>Valor</mat-label>
-        <input matInput type="number" class="example-right-align" [formControl]="form.controls.value" required />
+        <input
+          matInput
+          type="number"
+          class="example-right-align"
+          [formControl]="form.controls.value"
+          required
+        />
         <mat-error *ngIf="form.controls.value.invalid">{{
           getErrorMessage()
         }}</mat-error>
@@ -32,7 +38,12 @@
       </mat-form-field>
 
       <div class="btn-container mt-3">
-        <button mat-raised-button color="secondary" type="submit" class="bg-danger me-2">
+        <button
+          mat-raised-button
+          color="secondary"
+          type="submit"
+          class="bg-danger me-2"
+        >
           Salvar
         </button>
 

@@ -12,24 +12,23 @@
 }
 
 .card {
-  width: 200px;
-  box-shadow: 2px solid black;
+  width: 365px;
   margin: 0 auto;
 }
 
 .incomes {
-  border: 1px solid #1bbd51;
-  border-radius: 15px;
+  border: 0.5px solid #5cb178;
+  border-radius: 8px;
 }
 
 .expense {
-  border: 1px solid #db3f23;
-  border-radius: 15px;
+  border: 0.5px solid #e26651;
+  border-radius: 8px;
 }
 
 .total {
-  border: 1px solid #4f6cec;
-  border-radius: 15px;
+  border: 0.5px solid #000000;
+  border-radius: 8px;
 }
 
 /* Itens */
@@ -48,7 +47,6 @@
 .extrato {
   font-size: 1.6em;
 }
-
 
 @media (max-width: 460px) {
   .itens {
@@ -71,7 +69,6 @@
     margin-bottom: 1.2rem;
     border-bottom: 1px solid #d4d1d1;
   }
-
 }
 
 @media (min-width: 461px) and (max-width: 531px) {

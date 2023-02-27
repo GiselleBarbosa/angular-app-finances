@@ -8,7 +8,6 @@ import { Transactions } from '../../shared/models/transactions';
 import { MessageErrorComponent } from '../../shared/message-error/message-error.component';
 import { TransactionService } from '../transaction.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { transition } from '@angular/animations';
 
 @Component({
   selector: 'app-transaction-table',
