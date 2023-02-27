@@ -1,17 +1,10 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()" class="container">
+<form [formGroup]="form" (ngSubmit)="onUpdate()" class="container">
 
   <h2 class="mt-4">Editar Transação</h2>
   <div class="container">
-    <mat-form-field appearance="fill" class="id">
-      <mat-label>ID</mat-label>
-      <input matInput [formControl]="form.controls.id" readonly>
-    </mat-form-field>
-  </div>
-
-  <div class="container">
     <mat-form-field appearance="fill" class="w-50 me-4">
       <mat-label>Descrição</mat-label>
-      <input matInput [formControl]="form.controls.name" required>
+      <input matInput [formControl]="form.controls.name" >
       <mat-error *ngIf="form.controls.name.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
   </div>
@@ -35,7 +28,7 @@
 
     <div class="btn-container mt-3">
       <button mat-raised-button color="secondary" type="submit" class="bg-danger me-2">
-        Confirmar
+        Salvar
       </button>
 
       <button mat-raised-button (click)="onBack()">

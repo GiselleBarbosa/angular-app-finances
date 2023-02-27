@@ -19,7 +19,7 @@ export class TransactionResolver implements Resolve<Transactions> {
     state: RouterStateSnapshot
   ): Observable<any> {
     if (route.params && route.params['id']) {
-      return this.service.getTransactionsByID(route.params['id']);
+      return this.service.getByID(route.params['id']);
     }
     return of({ id: '', name: '', value: '', type: '' });
   }

@@ -1,22 +1,22 @@
 {
   "items": [
     {
-      "name": "agua",
-      "value": 178.57,
-      "type": "saida",
-      "id": 1
+      "id": 1,
+      "name": "Luz",
+      "value": 356.99,
+      "type": "saida"
     },
     {
-      "name": "luz",
-      "value": 148.52,
-      "type": "saida",
-      "id": 2
+      "id": 2,
+      "name": "Agua",
+      "value": 128.33,
+      "type": "saida"
     },
     {
-      "name": "internet",
-      "value": 99.99,
-      "type": "saida",
-      "id": 3
+      "id": 3,
+      "name": "Proventos",
+      "value": 4598.88,
+      "type": "entrada"
     },
     {
       "name": "carro",
@@ -28,7 +28,37 @@
       "name": "salario",
       "value": 3890.79,
       "type": "entrada",
-      "id": 4
+      "id": 5
+    },
+    {
+      "name": "TESTE",
+      "value": 1000,
+      "type": "entrada",
+      "id": 6
+    },
+    {
+      "name": "TESTE",
+      "value": 23333,
+      "type": "entrada",
+      "id": 7
+    },
+    {
+      "name": "teste",
+      "value": 121,
+      "type": "saida",
+      "id": 8
+    },
+    {
+      "name": "teste",
+      "value": 121212,
+      "type": "saida",
+      "id": 9
+    },
+    {
+      "id": 10,
+      "name": "Giselle",
+      "value": 2255,
+      "type": "entrada"
     }
   ]
 }

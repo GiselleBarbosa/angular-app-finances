@@ -38,7 +38,7 @@ export class TransactionTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.service
-      .getAllTransactions()
+      .getAll()
       .pipe(
         catchError((error) => {
           this.onError(
@@ -48,7 +48,6 @@ export class TransactionTableComponent implements OnInit {
         })
       )
       .subscribe((data) => (this.dataSource = data));
-    console.log('GET WORKS');
   }
 
   onError(errorMessage: string) {

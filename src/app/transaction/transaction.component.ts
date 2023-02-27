@@ -33,7 +33,7 @@ export class TransactionComponent implements OnInit {
   onSubmit() {
     this.formValues();
     this.checkType();
-    this.reload();
+    // this.reload();
   }
 
   formValues() {
@@ -44,7 +44,7 @@ export class TransactionComponent implements OnInit {
     };
 
     if ((body.name && body.value && body.type !== '') || null || undefined) {
-      this.service.createTransaction(body).subscribe((response) => response);
+      this.service.create(body).subscribe((response) => response);
 
       alert('Adicionado com sucesso!');
     } else {

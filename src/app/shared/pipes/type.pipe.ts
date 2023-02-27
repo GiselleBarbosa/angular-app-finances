@@ -11,6 +11,6 @@ export class TypePipe implements PipeTransform {
       case 'entrada':
         return 'arrow_circle_up';
     }
-    return 'arrow_circle_down';
+    return '';
   }
 }
