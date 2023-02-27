@@ -11,12 +11,11 @@ import { map, pipe } from 'rxjs';
   styleUrls: ['./transaction-update.component.scss'],
 })
 export class TransactionUpdateComponent implements OnInit {
-
   form = this.formBuilder.group({
     id: [''],
     name: [''],
     value: [0],
-    type: ['']
+    type: [''],
   });
   location: any;
 
@@ -25,7 +24,7 @@ export class TransactionUpdateComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private service: TransactionService
-  ) { }
+  ) {}
 
   ngOnInit() {
     let transaction: Transactions = this.route.snapshot.data['transaction'];
@@ -39,34 +38,34 @@ export class TransactionUpdateComponent implements OnInit {
     let json = JSON.stringify(transaction);
 
     return json;
-
   }
 
   onUpdate() {
     const transaction = this.form.value;
     const id = this.form.controls.id.value;
 
-   this.service.update(id, transaction).subscribe(
-      pipe(response =>
-        response = transaction
-      ))
+    this.service
+      .update(id, transaction)
+      .subscribe(pipe((response) => (response = transaction)));
 
-      return this.onBack()
-
+    return this.onBack();
   }
 
   getErrorMessage() {
     if (this.form.controls.name.hasError('required')) {
-      return 'Digite uma descrição válida';
+      return 'Verifique os dados digitados.';
     }
 
-    return this.form.controls.name.hasError('email') ? 'Verifique o campo preenchido' : '';
+    if (this.form.controls.value.hasError('required')) {
+      return 'Verifique os dados digitados.';
+    } else {
+      return this.form.controls.name.hasError('name')
+        ? 'Verifique o campo.'
+        : '';
+    }
   }
 
   onBack() {
     this.router.navigate(['']);
   }
-
-
-
 }

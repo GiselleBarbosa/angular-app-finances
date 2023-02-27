@@ -8,21 +8,15 @@ import { Transactions } from '../shared/models/transactions';
   providedIn: 'root',
 })
 export class TransactionService {
-
   private API = 'http://localhost:3000/items';
-
 
   items$?: Observable<Transactions[]>;
 
-  constructor(private http: HttpClient) { }
-
+  constructor(private http: HttpClient) {}
 
   /*List all transactions */
   getAll(): Observable<Transactions[]> {
-    return this.http.get<Transactions[]>(this.API)
-      .pipe(
-        take(1),
-        shareReplay());
+    return this.http.get<Transactions[]>(this.API).pipe(take(1), shareReplay());
   }
 
   /*Get transaction by ID */
@@ -32,17 +26,12 @@ export class TransactionService {
 
   /*Create new transaction*/
   create(transaction: {}): Observable<{}> {
-    return this.http.post(this.API, transaction)
-      .pipe(
-        map((obj) => obj));
+    return this.http.post(this.API, transaction).pipe(map((obj) => obj));
   }
 
   /*Update transaction */
   update(id: any, data: any) {
-    return this.http.put(`${this.API}/${id}`, data).pipe(
-      map((obj) => obj)
-      
-      )
+    return this.http.put(`${this.API}/${id}`, data).pipe(map((obj) => obj));
   }
 
   /*Verifica o tipo selecionado*/

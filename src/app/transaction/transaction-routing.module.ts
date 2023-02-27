@@ -12,8 +12,8 @@ const routes: Routes = [
   {
     path: 'update/:id',
     component: TransactionUpdateComponent,
-    resolve: { 
-      transaction: TransactionResolver 
+    resolve: {
+      transaction: TransactionResolver,
     },
   },
 ];

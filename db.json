@@ -29,36 +29,6 @@
       "value": 3890.79,
       "type": "entrada",
       "id": 5
-    },
-    {
-      "name": "TESTE",
-      "value": 1000,
-      "type": "entrada",
-      "id": 6
-    },
-    {
-      "name": "TESTE",
-      "value": 23333,
-      "type": "entrada",
-      "id": 7
-    },
-    {
-      "name": "teste",
-      "value": 121,
-      "type": "saida",
-      "id": 8
-    },
-    {
-      "name": "teste",
-      "value": 121212,
-      "type": "saida",
-      "id": 9
-    },
-    {
-      "id": 10,
-      "name": "Giselle",
-      "value": 2255,
-      "type": "entrada"
     }
   ]
 }

@@ -15,7 +15,7 @@ The Finances project aims to help organize the expenses and monthly billing of i
 
 ## 🔖 Layout
 
-#### Design created in Figma  
+#### Design created in Figma
 
 `https://www.figma.com/file/DsZsSt7epsXDrW0ZQLh9dn/app-finances?node-id=0%3A1&t=2FGFX5VDgLd2hOwh-0`
 
@@ -23,25 +23,27 @@ The Finances project aims to help organize the expenses and monthly billing of i
   <img alt="projeto DevLinks" src="https://raw.githubusercontent.com/TiagoBarbosa88/app-finances/master/src/assets/img/capa.png" width="100%">  
 </p>
 
-## 🚀 Technologies 
+## 🚀 Technologies
 
-This project was developed with the following technologies:  
+This project was developed with the following technologies:
 
-- Angular  
-- Typescript  
-- HTML/CSS  
-- Git/ Github  
-- Figma    
-- Angular Material  
-- Bootstrap    
+- Angular
+- Typescript
+- HTML/CSS
+- Git/ Github
+- Figma
+- Angular Material
+- Bootstrap
 
-## :memo: License 
+## :memo: License
 
 This project is licensed under the MIT. <p align="center">
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
+<img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
+
 </p>
 
 ---
+
 <p align="center">
 2023 © FINANCES
 Developed by Giselle & Tiago Barbosa

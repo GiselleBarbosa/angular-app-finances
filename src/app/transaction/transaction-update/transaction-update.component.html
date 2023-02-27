@@ -1,40 +1,51 @@
 <form [formGroup]="form" (ngSubmit)="onUpdate()" class="container">
-
   <h2 class="mt-4">Editar Transação</h2>
   <div class="container">
     <mat-form-field appearance="fill" class="w-50 me-4">
       <mat-label>Descrição</mat-label>
-      <input matInput [formControl]="form.controls.name" >
-      <mat-error *ngIf="form.controls.name.invalid">{{getErrorMessage()}}</mat-error>
+      <input matInput [formControl]="form.controls.name" required />
+      <mat-error *ngIf="form.controls.name.invalid">{{
+        getErrorMessage()
+      }}</mat-error>
     </mat-form-field>
   </div>
 
   <div class="container">
     <mat-form-field appearance="fill" floatLabel="always" class="w-25">
       <mat-label>Valor</mat-label>
-      <input matInput type="number" class="example-right-align" formControlName="value">
+      <input
+        matInput
+        type="number"
+        class="example-right-align"
+        [formControl]="form.controls.value"
+        required
+      />
+      <mat-error *ngIf="form.controls.value.invalid">{{
+        getErrorMessage()
+      }}</mat-error>
     </mat-form-field>
-    <mat-error *ngIf="form.controls.value.invalid">{{getErrorMessage()}}</mat-error>
   </div>
 
   <div class="container">
     <mat-form-field appearance="fill">
       <mat-label>Selecione o tipo da operação</mat-label>
-      <mat-select formControlName="type" id="type">
+      <mat-select formControlName="type" id="type" required>
         <mat-option value="entrada">Entrada</mat-option>
         <mat-option value="saida">Saída</mat-option>
       </mat-select>
     </mat-form-field>
 
     <div class="btn-container mt-3">
-      <button mat-raised-button color="secondary" type="submit" class="bg-danger me-2">
+      <button
+        mat-raised-button
+        color="secondary"
+        type="submit"
+        class="bg-danger me-2"
+      >
         Salvar
       </button>
 
-      <button mat-raised-button (click)="onBack()">
-        Voltar
-      </button>
+      <button mat-raised-button (click)="onBack()">Voltar</button>
     </div>
-
   </div>
 </form>
