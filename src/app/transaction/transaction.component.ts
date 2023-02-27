@@ -31,12 +31,8 @@ export class TransactionComponent implements OnInit {
   ngOnInit() { }
 
   onSave() {
-    if (this.form.valid) {
-      this.formValues();
-      this.checkType();
-    }
-    return;
-  }
+    this.formValues();
+ }
 
   formValues() {
     let body = {
@@ -45,22 +41,17 @@ export class TransactionComponent implements OnInit {
       type: this.form.controls.type.value,
     };
 
-    if ((body.name && body.value && body.type !== '') || null || undefined) {
+    if ((this.form.valid) || null || undefined) {
       this.service.create(body).subscribe((response) => response);
-
       alert('Adicionado com sucesso!');
     } else {
-      alert('Operação não permitida');
+
+      return alert('Verifique se os campos estão preenchidos corretamente.');
     }
+
     location.reload();
 
     return;
-  }
-
-  checkType() {
-    let type = this.form.controls.type.value;
-    this.service.checkTransactionType(type);
-    console.log(type);
   }
 
   getErrorMessage() {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
-import { of, pipe } from 'rxjs';
+import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { Transactions } from '../../shared/models/transactions';
@@ -36,12 +36,11 @@ export class TransactionTableComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.service
-      .getAll()
+    this.service.getAll()
       .pipe(
-        catchError((error) => {
+        catchError((err) => {
           this.onError(
-            'Não foi possível exibir os extratos. Tente novamente mais tarde.'
+            'Houve um erro ao exibir o extrato. Tente novamente mais tarde.'
           );
           return of([]);
         })
@@ -49,15 +48,22 @@ export class TransactionTableComponent implements OnInit {
       .subscribe((data) => (this.dataSource = data));
   }
 
-  onError(errorMessage: string) {
-    this.dialog.open(MessageErrorComponent, {
-      data: errorMessage,
-    });
+  onDelete(items: Transactions) {
+    this.service.delete(items.id)
+      .pipe(
+        catchError((err) => {
+          this.onError('Erro ao tentar remover transação.');
+          return of([]);
+        })
+      ).subscribe();
+
+    // location.reload()
   }
 
-  onDelete(items: Transactions) {
-    this.service.delete(items.id).subscribe();
-    location.reload();
+  onError(errorMessage: string) {
+    this.dialog.open(MessageErrorComponent, {
+      data: errorMessage
+    });
   }
 
   getRouteParams(items: Transactions) {

@@ -16,10 +16,7 @@ export class TransactionService {
 
   /*List all transactions */
   getAll(): Observable<Transactions[]> {
-    return this.http.get<Transactions[]>(this.API)
-      .pipe(
-        first()
-       );
+    return this.http.get<Transactions[]>(this.API).pipe(first());
   }
 
   /*Get transaction by ID */
@@ -29,31 +26,17 @@ export class TransactionService {
 
   /*Create new transaction*/
   create(transaction: {}): Observable<{}> {
-    return this.http.post(this.API, transaction)
-      .pipe(
-        map((obj) => obj));
+    return this.http.post(this.API, transaction).pipe(map((obj) => obj));
   }
 
   /*Update transaction */
   update(id: any, data: any) {
-    return this.http.put(`${this.API}/${id}`, data)
-      .pipe(
-        map((obj) => obj));
+    return this.http.put(`${this.API}/${id}`, data).pipe(map((obj) => obj));
   }
 
   /*Delete transaction */
   delete(id: string): Observable<Transactions> {
     return this.http.delete<Transactions>(`${this.API}/${id}`);
-
-  }
-
-  /*Check selected type*/
-  checkTransactionType(type: any) {
-    if (type === 'entrada') {
-      console.log('escolheu ENTRADA', type);
-    } else if (type === 'saida') {
-      console.log('escolheu SAIDA', type);
-    }
   }
 
   /*operations drafts*/
