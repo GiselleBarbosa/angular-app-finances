@@ -26,13 +26,13 @@ export class TransactionComponent implements OnInit {
 
   body?: Observable<Transactions[]>;
 
-  constructor(private service: TransactionService) { }
+  constructor(private service: TransactionService) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   onSave() {
     this.formValues();
- }
+  }
 
   formValues() {
     let body = {
@@ -41,11 +41,10 @@ export class TransactionComponent implements OnInit {
       type: this.form.controls.type.value,
     };
 
-    if ((this.form.valid) || null || undefined) {
+    if (this.form.valid || null || undefined) {
       this.service.create(body).subscribe((response) => response);
       alert('Adicionado com sucesso!');
     } else {
-
       return alert('Verifique se os campos estão preenchidos corretamente.');
     }
 

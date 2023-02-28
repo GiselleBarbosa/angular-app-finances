@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { first, map, Observable } from 'rxjs';
+import { first, map, Observable, shareReplay } from 'rxjs';
 import { Transactions } from '../shared/models/transactions';
 
 @Injectable({
@@ -16,7 +16,8 @@ export class TransactionService {
 
   /*List all transactions */
   getAll(): Observable<Transactions[]> {
-    return this.http.get<Transactions[]>(this.API).pipe(first());
+    return this.http.get<Transactions[]>(this.API).pipe(first(),
+      shareReplay());
   }
 
   /*Get transaction by ID */

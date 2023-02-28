@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
-import { of } from 'rxjs';
+import { of, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { Transactions } from '../../shared/models/transactions';
@@ -15,18 +15,15 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./transaction-table.component.scss'],
 })
 export class TransactionTableComponent implements OnInit {
-  tableItems: Transactions[] = [];
+  tableItems$: Observable<Transactions[]> = this.service.getAll();
 
   displayedColumns: string[] = [
-    'ID',
     'name',
     'value',
     'type',
     'update',
-    'remove',
+    'remove'
   ];
-
-  dataSource = this.tableItems;
 
   constructor(
     private service: TransactionService,
@@ -36,37 +33,41 @@ export class TransactionTableComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.service.getAll()
-      .pipe(
-        catchError((err) => {
-          this.onError(
-            'Houve um erro ao exibir o extrato. Tente novamente mais tarde.'
-          );
-          return of([]);
-        })
-      )
-      .subscribe((data) => (this.dataSource = data));
+    this.tableItems$.pipe(
+      catchError((err) => {
+        this.onError(
+          'Houve um erro ao exibir o extrato. Tente novamente mais tarde.'
+        );
+        return of([]);
+      })
+    )
   }
 
   onDelete(items: Transactions) {
-    this.service.delete(items.id)
+    this.service
+      .delete(items.id)
       .pipe(
         catchError((err) => {
           this.onError('Erro ao tentar remover transação.');
           return of([]);
         })
-      ).subscribe();
+      )
+      .subscribe();
 
-    // location.reload()
+    this.reload();
   }
 
   onError(errorMessage: string) {
     this.dialog.open(MessageErrorComponent, {
-      data: errorMessage
+      data: errorMessage,
     });
   }
 
   getRouteParams(items: Transactions) {
     this.router.navigate(['update', items.id], { relativeTo: this.route });
+  }
+
+  reload() {
+    location.reload();
   }
 }

@@ -1,33 +1,27 @@
 {
   "items": [
     {
-      "id": 1,
       "name": "Luz",
-      "value": 1000.05,
-      "type": "saida"
+      "value": 375.14,
+      "type": "saída",
+      "id": 2
     },
     {
-      "id": 2,
-      "name": "Agua",
-      "value": 128.33,
-      "type": "saida"
+      "name": "Água",
+      "value": 258.14,
+      "type": "saída",
+      "id": 3
     },
     {
-      "id": 3,
+      "id": 4,
       "name": "Proventos",
-      "value": 4598.88,
+      "value": 2800,
       "type": "entrada"
     },
     {
-      "name": "Internet",
-      "value": 99.99,
-      "type": "saida",
-      "id": 4
-    },
-    {
       "id": 5,
-      "name": "editado",
-      "value": 123999,
+      "name": "Rendimentos",
+      "value": 4321.89,
       "type": "entrada"
     }
   ]

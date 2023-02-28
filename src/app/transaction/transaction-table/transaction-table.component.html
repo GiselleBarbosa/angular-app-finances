@@ -1,8 +1,12 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z6">
-  <ng-container matColumnDef="ID">
+<table *ngIf="tableItems$ | async as tableItems; else  noData" mat-table [dataSource]="tableItems$"
+  class="mat-elevation-z3">
+  <!-- <ng-container matColumnDef="ID">
     <th mat-header-cell *matHeaderCellDef>ID</th>
     <td mat-cell *matCellDef="let items">{{ items.id }}</td>
-  </ng-container>
+  </ng-container> -->
+
+
+
 
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Descrição</th>
@@ -11,18 +15,17 @@
 
   <ng-container matColumnDef="value">
     <th mat-header-cell *matHeaderCellDef>Valor</th>
-    <td mat-cell *matCellDef="let items">{{ items.value }}</td>
+    <td mat-cell *matCellDef="let items">
+      {{ items.value | currency : "BRL" }}
+    </td>
   </ng-container>
 
   <ng-container matColumnDef="type">
     <th mat-header-cell *matHeaderCellDef>Tipo</th>
     <td mat-cell *matCellDef="let items">
-      <mat-icon
-        [ngClass]="items.type == 'saida' ? 'red' : 'green'"
-        class="text type float-start me-2"
-        >{{ items.type | type }}
+      <mat-icon [ngClass]="items.type == 'saída' ? 'red' : 'green'" class="float-start me-2">{{ items.type | type }}
       </mat-icon>
-      <p>{{ items.type | titlecase }}</p>
+      <p class="text-type">{{ items.type | titlecase }}</p>
     </td>
   </ng-container>
 
@@ -30,7 +33,7 @@
     <th mat-header-cell *matHeaderCellDef>Alterar</th>
     <td mat-cell *matCellDef="let items">
       {{ items.update }}
-      <mat-icon class="'gray'" (click)="getRouteParams(items)">edit</mat-icon>
+      <mat-icon title="Clique para editar" class="'gray'" (click)="getRouteParams(items)">edit</mat-icon>
     </td>
   </ng-container>
 
@@ -38,20 +41,28 @@
     <th mat-header-cell *matHeaderCellDef>Remover</th>
     <td mat-cell *matCellDef="let items">
       {{ items.remove }}
-      <mat-icon class="red" (click)="onDelete(items)">delete</mat-icon>
+      <mat-icon title="Clique para remover" class="red" (click)="onDelete(items)">delete</mat-icon>
     </td>
   </ng-container>
 
   <!-- <ng-container matColumnDef="status">
-    <th mat-header-cell *matHeaderCellDef> Status </th>
-    <td mat-cell *matCellDef="let items">
-      <mat-icon [ngClass]="items.status == 'Pendente' ? 'red' : 'green'" class="type float-start me-2"
-       >
-        {{ items.status | status }}
-      </mat-icon>
-    </td>
-  </ng-container> -->
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let items">
+        <mat-icon [ngClass]="items.status == 'Pendente' ? 'red' : 'green'" class="type float-start me-2"
+         >
+          {{ items.status | status }}
+        </mat-icon>
+      </td>
+    </ng-container> -->
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
+
+<ng-template #noData>
+  <mat-card>
+    <p> Não foram encontrados dados para exibição.
+    </p>
+    <button mat-button color="secondary" (click)="reload()">Recarregar página</button>
+  </mat-card>
+</ng-template>

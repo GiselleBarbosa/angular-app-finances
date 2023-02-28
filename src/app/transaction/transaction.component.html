@@ -3,7 +3,7 @@
   <div class="cards">
     <mat-card class="card incomes">
       <mat-card-title
-        >Saldo
+        >Renda
         <mat-icon class="float-end text-success">arrow_circle_up</mat-icon>
       </mat-card-title>
       <mat-card-subtitle><strong>R$ </strong>{{ incomes }}</mat-card-subtitle>
@@ -11,7 +11,7 @@
 
     <mat-card class="card expense">
       <mat-card-title
-        >Despesas
+        >Despesa
         <mat-icon class="float-end text-danger"
           >arrow_circle_down</mat-icon
         ></mat-card-title
@@ -21,7 +21,7 @@
 
     <mat-card class="card total">
       <mat-card-title
-        >Fechamento
+        >Saldo
         <mat-icon class="float-end">monetization_on</mat-icon></mat-card-title
       >
       <mat-card-subtitle><strong>R$ </strong> {{ total }}</mat-card-subtitle>
@@ -53,7 +53,7 @@
         <mat-label>Tipo de operação</mat-label>
         <mat-select formControlName="type" id="type">
           <mat-option value="entrada">Entrada</mat-option>
-          <mat-option value="saida">Saída</mat-option>
+          <mat-option value="saída">Saída</mat-option>
         </mat-select>
         <mat-error *ngIf="form.controls.type.invalid">{{
           getErrorMessage()

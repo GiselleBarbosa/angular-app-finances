@@ -2,17 +2,18 @@
   display: flex;
   flex-direction: column;
   min-height: 85%;
+  min-width: 100%;
 }
 
+// section card
 .cards {
-  padding-top: 2rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
 }
 
 .card {
-  width: 365px;
+  width: 250px;
   margin: 0 auto;
 }
 
@@ -31,7 +32,7 @@
   border-radius: 8px;
 }
 
-/* Itens */
+// transaction form
 .itens {
   margin: 0 auto;
   display: flex;
@@ -53,6 +54,20 @@
     display: flex;
     flex-direction: column;
   }
+  .card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 490px) {
+  .cards {
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -69,25 +84,15 @@
     margin-bottom: 1.2rem;
     border-bottom: 1px solid #d4d1d1;
   }
-}
 
-@media (min-width: 461px) and (max-width: 531px) {
-  .mat-card-title {
-    font-size: 1.2em;
-  }
-}
-
-@media (max-width: 460px) {
-  .cards {
-    gap: 2rem;
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 1000px) {
   .cards {
     gap: 2rem;
     width: 100%;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+  .mat-card-title {
+    font-size: 1.2em;
   }
 }
