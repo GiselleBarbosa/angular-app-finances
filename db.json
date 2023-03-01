@@ -23,6 +23,12 @@
       "name": "Rendimentos",
       "value": 4321.89,
       "type": "entrada"
+    },
+    {
+      "name": "Teste",
+      "value": 1000,
+      "type": "saída",
+      "id": 6
     }
   ]
 }

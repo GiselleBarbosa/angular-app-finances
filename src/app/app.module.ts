@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from 'src/app/app-routing.module';
-import { environment } from 'src/environments/environment';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './core/components/footer/footer.component';
@@ -33,7 +32,6 @@ registerLocaleData(ptBr);
     ReactiveFormsModule,
     HttpClientModule,
     SharedModule,
-    AngularFireModule.initializeApp(environment.firebase),
   ],
   exports: [AngularFireModule],
   providers: [{ provide: LOCALE_ID, useValue: 'pt' }],

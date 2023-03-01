@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
-import { of, Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { Transactions } from '../../shared/models/transactions';
-import { MessageErrorComponent } from '../../shared/message-error/message-error.component';
-import { TransactionService } from '../transaction.service';
 import { ActivatedRoute, Router } from '@angular/router';
+
+import { MessageErrorComponent } from '../../shared/message-error/message-error.component';
+import { Transactions } from '../../shared/models/transactions';
+import { TransactionService } from '../transaction.service';
 
 @Component({
   selector: 'app-transaction-table',
@@ -17,31 +18,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class TransactionTableComponent implements OnInit {
   tableItems$: Observable<Transactions[]> = this.service.getAll();
 
-  displayedColumns: string[] = [
-    'name',
-    'value',
-    'type',
-    'update',
-    'remove'
-  ];
+  displayedColumns: string[] = ['name', 'value', 'type', 'update', 'remove'];
 
   constructor(
     private service: TransactionService,
     public dialog: MatDialog,
     private router: Router,
     private route: ActivatedRoute
-  ) { }
+  ) {}
 
-  ngOnInit(): void {
-    this.tableItems$.pipe(
-      catchError((err) => {
-        this.onError(
-          'Houve um erro ao exibir o extrato. Tente novamente mais tarde.'
-        );
-        return of([]);
-      })
-    )
-  }
+  ngOnInit(): void {}
 
   onDelete(items: Transactions) {
     this.service

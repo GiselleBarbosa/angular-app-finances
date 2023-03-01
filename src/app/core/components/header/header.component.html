@@ -19,11 +19,11 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 
       <form class="d-flex justify-content-center align-self-center gap-4 p-2">
-        <div *ngIf="!(afAuth.user | async)">
+        <div>
           <app-buttons (click)="onlogout()" [btnTxt]="btnlogout"></app-buttons>
         </div>
 
-        <div *ngIf="!(afAuth.user | async)">
+        <div>
           <button
             type="button"
             class="btn btn-light btn-sm"

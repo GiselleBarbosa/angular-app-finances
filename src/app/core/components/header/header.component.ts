@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,13 +10,12 @@ export class HeaderComponent implements OnInit {
   btnlogin: string = 'login';
   btnlogout: string = 'logout';
 
-  constructor(private router: Router, public afAuth: AngularFireAuth) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
   onlogout(): void {
     console.log('logout');
     this.router.navigate(['/']);
-    this.afAuth.signOut();
   }
 }

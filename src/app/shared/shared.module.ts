@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { AlertsComponent } from './alerts/alerts.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { MaterialModule } from './material/material.module';
 import { MessageErrorComponent } from './message-error/message-error.component';
 import { StatusPipe } from './pipes/status.pipe';
 import { TypePipe } from './pipes/type.pipe';
-import { AlertsComponent } from './alerts/alerts.component';
 
 @NgModule({
   declarations: [

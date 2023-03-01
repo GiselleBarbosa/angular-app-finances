@@ -12,12 +12,11 @@ export class TransactionService {
 
   transaction$?: Observable<Transactions[]>;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   /*List all transactions */
   getAll(): Observable<Transactions[]> {
-    return this.http.get<Transactions[]>(this.API).pipe(first(),
-      shareReplay());
+    return this.http.get<Transactions[]>(this.API).pipe(first(), shareReplay());
   }
 
   /*Get transaction by ID */
