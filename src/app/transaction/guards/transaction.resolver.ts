@@ -6,13 +6,13 @@ import {
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { Transactions } from 'src/app/shared/models/transactions';
-import { TransactionService } from '../transaction.service';
+import { TransactionService } from '../services/transaction.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TransactionResolver implements Resolve<Transactions> {
-  constructor(private service: TransactionService) {}
+  constructor(private service: TransactionService) { }
 
   resolve(
     route: ActivatedRouteSnapshot,

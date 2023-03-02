@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 import { Transactions } from 'src/app/shared/models/transactions';
-import { TransactionService } from '../transaction.service';
+import { TransactionService } from '../services/transaction.service';
 import { pipe } from 'rxjs';
 
 @Component({
@@ -17,14 +17,13 @@ export class TransactionUpdateComponent implements OnInit {
     value: [0],
     type: [''],
   });
-  location: any;
 
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private service: TransactionService
-  ) {}
+  ) { }
 
   ngOnInit() {
     let transaction: Transactions = this.route.snapshot.data['transaction'];

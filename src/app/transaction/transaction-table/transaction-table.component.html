@@ -1,7 +1,6 @@
 <table
-  *ngIf="tableItems$ | async as tableItems; else noData"
-  mat-table
-  [dataSource]="tableItems$"
+   mat-table
+  [dataSource]="dataSource"
   class="mat-elevation-z3"
 >
   <ng-container matColumnDef="name">
@@ -58,11 +57,4 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
 
-<ng-template #noData>
-  <mat-card>
-    <p>Não foram encontrados dados para exibição.</p>
-    <button mat-button color="secondary" (click)="reload()">
-      Recarregar página
-    </button>
-  </mat-card>
-</ng-template>
+

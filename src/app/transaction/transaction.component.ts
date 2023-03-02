@@ -3,7 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { Observable } from 'rxjs';
 import { Transactions } from '../shared/models/transactions';
-import { TransactionService } from './transaction.service';
+import { TransactionService } from './services/transaction.service';
+import { SharedDataService } from './services/shared-data.service';
 
 @Component({
   selector: 'app-transaction',
@@ -21,17 +22,24 @@ export class TransactionComponent implements OnInit {
     type: new FormControl('', [Validators.required]),
   });
 
-  incomes: number = 0;
-  expense: number = 0;
-  total: number = 0;
-
   body?: Observable<Transactions[]>;
 
-  constructor(private service: TransactionService) {}
+  values?: number[];
 
-  ngOnInit() {}
+  constructor(
+    private service: TransactionService,
+    private sharedData: SharedDataService
+  ) { }
+
+  ngOnInit() {
+    /* usando service para se inscrever na variavel do componente irmao */
+    this.sharedData.values$.subscribe(values => {
+      this.values = values;
+    });
+  }
 
   onSave() {
+    /*metodo criado no template - evento de click */
     this.formValues();
   }
 
@@ -68,5 +76,7 @@ export class TransactionComponent implements OnInit {
     } else {
       return this.form.controls.name.hasError('name') ? 'Erro.' : '';
     }
+
+
   }
 }

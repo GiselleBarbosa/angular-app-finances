@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { first, map, Observable, shareReplay } from 'rxjs';
-import { Transactions } from '../shared/models/transactions';
+import { Transactions } from '../../shared/models/transactions';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +12,7 @@ export class TransactionService {
 
   transaction$?: Observable<Transactions[]>;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   /*List all transactions */
   getAll(): Observable<Transactions[]> {
