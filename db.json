@@ -2,9 +2,27 @@
   "items": [
     {
       "id": 1,
-      "name": "Agua",
-      "value": 99.99,
-      "type": "saida"
+      "name": "teste",
+      "value": 50,
+      "type": "saída"
+    },
+    {
+      "id": 2,
+      "name": "teste2",
+      "value": 50,
+      "type": "entrada"
+    },
+    {
+      "name": "teste3",
+      "value": 22,
+      "type": "saída",
+      "id": 3
+    },
+    {
+      "name": "teste4",
+      "value": 198.99,
+      "type": "saída",
+      "id": 4
     }
   ]
 }

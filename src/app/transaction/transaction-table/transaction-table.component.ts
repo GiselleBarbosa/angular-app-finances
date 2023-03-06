@@ -21,7 +21,8 @@ export class TransactionTableComponent implements OnInit {
   displayedColumns: string[] = ['name', 'value', 'type', 'update', 'remove'];
   dataSource = this.tableItems;
 
-  values: number[] = [];
+  subscribeValues?: number[];
+  resultCalculate?: any;
 
   constructor(
     private service: TransactionService,
@@ -29,7 +30,7 @@ export class TransactionTableComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private sharedData: SharedDataService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.service
@@ -44,18 +45,30 @@ export class TransactionTableComponent implements OnInit {
       )
       .subscribe((data) => {
         this.dataSource = data;
+
         /*igualando a variavel dentro deste metodo com a criada fora do constructor */
         let subscribeValues = data.filter((data) => data.value);
-        /*passando filtro no obj para obter apenas valores.*/
-        this.values = subscribeValues.map((data) => data.value);
 
+        /*passando filtro no obj para obter apenas valores.*/
+        this.subscribeValues = subscribeValues.map((data) => data.value);
+
+        console.log("this.values na func", this.subscribeValues);
+
+        let valuesToCalculate = this.subscribeValues;
+        let resultCalculate = valuesToCalculate.reduce((acc, current) => acc + current, 0);
+
+        this.resultCalculate = resultCalculate
+        console.log("resultCalculate = ", resultCalculate);
+
+        /*chama o metodo que ira enviar a variavel ao componente irmao.*/
         this.sendValue();
-      });
+      }
+      );
   }
 
   /*metodo para setar a variavel local que ira ser compartilhada com componente irmao via service*/
   sendValue() {
-    this.sharedData.setValue(this.values);
+    this.sharedData.setValue(this.resultCalculate);
   }
 
   onDelete(items: Transactions) {

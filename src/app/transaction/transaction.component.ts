@@ -24,7 +24,7 @@ export class TransactionComponent implements OnInit {
 
   body?: Observable<Transactions[]>;
 
-  values?: number[];
+  resultCalculate?: number[] = [0];
 
   constructor(
     private service: TransactionService,
@@ -34,7 +34,7 @@ export class TransactionComponent implements OnInit {
   ngOnInit() {
     /* usando service para se inscrever na variavel do componente irmao */
     this.sharedData.values$.subscribe(values => {
-      this.values = values;
+      this.resultCalculate = values;
     });
   }
 

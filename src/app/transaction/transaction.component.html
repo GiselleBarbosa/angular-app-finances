@@ -2,7 +2,7 @@
   <div class="cards">
     <mat-card class="card incomes">
       <mat-card-title
-        >Renda
+        >Receita
         <mat-icon class="float-end text-success">arrow_circle_up</mat-icon>
       </mat-card-title>
       <mat-card-subtitle><strong>R$ </strong>0</mat-card-subtitle>
@@ -19,11 +19,12 @@
     </mat-card>
 
     <mat-card class="card total">
-      <mat-card-title
+      <mat-card-title 
         >Saldo
-        <mat-icon class="float-end">monetization_on</mat-icon></mat-card-title
-      >
-      <mat-card-subtitle><strong>R$ </strong> {{ values }}</mat-card-subtitle>
+        <!-- <mat-icon class="float-end">monetization_on</mat-icon></mat-card-title> -->
+        <mat-card-subtitle class="float-end balance"><strong>R$ </strong> {{ resultCalculate }}</mat-card-subtitle>
+      <!-- <mat-card-subtitle class="balance"><strong>R$ </strong> {{ resultCalculate }}</mat-card-subtitle> -->
+     </mat-card-title>    
     </mat-card>
   </div>
 
