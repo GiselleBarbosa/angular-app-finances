@@ -5,6 +5,12 @@
       "value": 22,
       "type": "saída",
       "id": 3
+    },
+    {
+      "name": "Energia",
+      "value": 180.08,
+      "type": "saída",
+      "id": 4
     }
   ]
 }
