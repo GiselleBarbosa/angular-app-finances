@@ -30,7 +30,7 @@ export class TransactionTableComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private sharedData: SharedDataService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.service
@@ -52,18 +52,20 @@ export class TransactionTableComponent implements OnInit {
         /*passando filtro no obj para obter apenas valores.*/
         this.subscribeValues = subscribeValues.map((data) => data.value);
 
-        console.log("this.values na func", this.subscribeValues);
+        console.log('this.values na func', this.subscribeValues);
 
         let valuesToCalculate = this.subscribeValues;
-        let resultCalculate = valuesToCalculate.reduce((acc, current) => acc + current, 0);
+        let resultCalculate = valuesToCalculate.reduce(
+          (acc, current) => acc + current,
+          0
+        );
 
-        this.resultCalculate = resultCalculate
-        console.log("resultCalculate = ", resultCalculate);
+        this.resultCalculate = resultCalculate;
+        console.log('resultCalculate = ', resultCalculate);
 
         /*chama o metodo que ira enviar a variavel ao componente irmao.*/
         this.sendValue();
-      }
-      );
+      });
   }
 
   /*metodo para setar a variavel local que ira ser compartilhada com componente irmao via service*/
@@ -77,6 +79,7 @@ export class TransactionTableComponent implements OnInit {
       .pipe(
         catchError((err) => {
           this.onError('Erro ao tentar remover transação.');
+
           return of([]);
         })
       )
@@ -85,9 +88,9 @@ export class TransactionTableComponent implements OnInit {
     this.reload();
   }
 
-  onError(errorMessage: string) {
+  onError(titleMessage: string, message?: string) {
     this.dialog.open(MessageErrorComponent, {
-      data: errorMessage,
+      data: titleMessage,
     });
   }
 
