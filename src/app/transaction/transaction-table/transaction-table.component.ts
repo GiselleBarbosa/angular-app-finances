@@ -43,10 +43,10 @@ export class TransactionTableComponent implements OnInit {
       .getAll()
       .pipe(
         catchError((err) => {
-          this.openDialog(
+          /* this.openDialog(
             'Erro inesperado',
             'Não foi possível exibir as transações'
-          );
+          ); */
           return of([]);
         })
       )
@@ -85,7 +85,7 @@ export class TransactionTableComponent implements OnInit {
       .delete(items.id)
       .pipe(
         catchError((err) => {
-          this.openDialog('Erro inesperado', 'Não foi possível remover o item');
+/*           this.openDialog('Erro inesperado', 'Não foi possível remover o item'); */
           return of([]);
         })
       )
