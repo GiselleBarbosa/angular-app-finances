@@ -1,14 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { of, pipe } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
-import { MessageErrorComponent } from '../../shared/message-error/message-error.component';
 import { Transactions } from '../../shared/models/transactions';
-import { TransactionService } from '../services/transaction.service';
 import { SharedDataService } from '../services/shared-data.service';
+import { TransactionService } from '../services/transaction.service';
+import { DialogMessageComponent } from 'src/app/shared/dialog-message/dialog-message.component';
 
 @Component({
   selector: 'app-transaction-table',
@@ -16,13 +16,19 @@ import { SharedDataService } from '../services/shared-data.service';
   styleUrls: ['./transaction-table.component.scss'],
 })
 export class TransactionTableComponent implements OnInit {
-  tableItems: Transactions[] = [];
+  public tableItems: Transactions[] = [];
 
-  displayedColumns: string[] = ['name', 'value', 'type', 'update', 'remove'];
-  dataSource = this.tableItems;
+  public displayedColumns: string[] = [
+    'name',
+    'value',
+    'type',
+    'update',
+    'remove',
+  ];
+  public dataSource = this.tableItems;
 
-  subscribeValues?: number[];
-  resultCalculate?: any;
+  public subscribeValues?: number[];
+  public resultCalculate?: any;
 
   constructor(
     private service: TransactionService,
@@ -32,13 +38,14 @@ export class TransactionTableComponent implements OnInit {
     private sharedData: SharedDataService
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.service
       .getAll()
       .pipe(
         catchError((err) => {
-          this.onError(
-            'Houve um erro ao exibir o extrato. Tente novamente mais tarde.'
+          this.openDialog(
+            'Erro inesperado',
+            'Não foi possível exibir as transações'
           );
           return of([]);
         })
@@ -69,17 +76,16 @@ export class TransactionTableComponent implements OnInit {
   }
 
   /*metodo para setar a variavel local que ira ser compartilhada com componente irmao via service*/
-  sendValue() {
+  public sendValue() {
     this.sharedData.setValue(this.resultCalculate);
   }
 
-  onDelete(items: Transactions) {
+  public onDelete(items: Transactions) {
     this.service
       .delete(items.id)
       .pipe(
         catchError((err) => {
-          this.onError('Erro ao tentar remover transação.');
-
+          this.openDialog('Erro inesperado', 'Não foi possível remover o item');
           return of([]);
         })
       )
@@ -88,17 +94,17 @@ export class TransactionTableComponent implements OnInit {
     this.reload();
   }
 
-  onError(titleMessage: string, message?: string) {
-    this.dialog.open(MessageErrorComponent, {
-      data: titleMessage,
-    });
-  }
-
-  getRouteParams(items: Transactions) {
+  public getRouteParams(items: Transactions) {
     this.router.navigate(['update', items.id], { relativeTo: this.route });
   }
 
-  reload() {
+  public openDialog(title: string, message: string): void {
+    this.dialog.open(DialogMessageComponent, {
+      data: { title, message },
+    });
+  }
+
+  public reload() {
     location.reload();
   }
 }
