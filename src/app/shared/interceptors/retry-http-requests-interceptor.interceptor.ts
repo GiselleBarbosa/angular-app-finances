@@ -20,7 +20,7 @@ export class RetryHttpRequestsInterceptorInterceptor
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const maxRetryAttempts = 5;
+    const maxRetryAttempts = 1;
     let retries = 0;
 
     return next.handle(req).pipe(
@@ -28,15 +28,17 @@ export class RetryHttpRequestsInterceptorInterceptor
       catchError((error: HttpErrorResponse) => {
         if (retries < maxRetryAttempts) {
           retries++;
-          console.log('tentando... ');
+                 this.openDialog(
+          `${error.statusText} `,
+          `Erro ao tentar carregar suas transações `,
+          );
           return this.retryRequest(req, next);
         } else {
           () => {
-            console.log('errooooo');
 
             this.openDialog(
               'Erro inesperado',
-              'Não foi possível remover o item'
+              'Algo estranho aconteceu e não foi possível carregar suas transações',
             );
           };
           return throwError(error);

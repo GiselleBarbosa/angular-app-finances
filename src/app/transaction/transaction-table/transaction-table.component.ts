@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Subject } from 'rxjs';
+import { take, takeUntil } from 'rxjs/operators';
 
+import { DialogMessageComponent } from 'src/app/shared/dialog-message/dialog-message.component';
 import { Transactions } from '../../shared/models/transactions';
 import { SharedDataService } from '../services/shared-data.service';
 import { TransactionService } from '../services/transaction.service';
-import { DialogMessageComponent } from 'src/app/shared/dialog-message/dialog-message.component';
 
 @Component({
   selector: 'app-transaction-table',
@@ -30,6 +30,8 @@ export class TransactionTableComponent implements OnInit {
   public subscribeValues?: number[];
   public resultCalculate?: any;
 
+  private unsubscribe$ = new Subject<void>();
+
   constructor(
     private service: TransactionService,
     public dialog: MatDialog,
@@ -41,15 +43,7 @@ export class TransactionTableComponent implements OnInit {
   public ngOnInit() {
     this.service
       .getAll()
-      .pipe(
-        catchError((err) => {
-          /* this.openDialog(
-            'Erro inesperado',
-            'Não foi possível exibir as transações'
-          ); */
-          return of([]);
-        })
-      )
+      .pipe(take(1), takeUntil(this.unsubscribe$))
       .subscribe((data) => {
         this.dataSource = data;
 
@@ -59,20 +53,23 @@ export class TransactionTableComponent implements OnInit {
         /*passando filtro no obj para obter apenas valores.*/
         this.subscribeValues = subscribeValues.map((data) => data.value);
 
-        console.log('this.values na func', this.subscribeValues);
-
         let valuesToCalculate = this.subscribeValues;
+
         let resultCalculate = valuesToCalculate.reduce(
           (acc, current) => acc + current,
           0
         );
 
         this.resultCalculate = resultCalculate;
-        console.log('resultCalculate = ', resultCalculate);
 
         /*chama o metodo que ira enviar a variavel ao componente irmao.*/
         this.sendValue();
       });
+  }
+
+  public ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 
   /*metodo para setar a variavel local que ira ser compartilhada com componente irmao via service*/
@@ -81,16 +78,7 @@ export class TransactionTableComponent implements OnInit {
   }
 
   public onDelete(items: Transactions) {
-    this.service
-      .delete(items.id)
-      .pipe(
-        catchError((err) => {
-/*           this.openDialog('Erro inesperado', 'Não foi possível remover o item'); */
-          return of([]);
-        })
-      )
-      .subscribe();
-
+    this.service.delete(items.id).subscribe();
     this.reload();
   }
 
