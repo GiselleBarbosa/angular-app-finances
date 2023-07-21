@@ -1,8 +1,4 @@
-<table
-   mat-table
-  [dataSource]="dataSource"
-  class="mat-elevation-z3"
->
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z3">
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Descrição</th>
     <td mat-cell *matCellDef="let items">{{ items.name | titlecase }}</td>
@@ -56,5 +52,3 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
-
-

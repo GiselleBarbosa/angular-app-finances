@@ -1,0 +1,22 @@
+{
+  "transactions": [
+    {
+      "name": "teste3",
+      "value": 22,
+      "type": "saída",
+      "id": 3
+    },
+    {
+      "name": "agua",
+      "value": 150,
+      "type": "saída",
+      "id": 4
+    },
+    {
+      "name": "Salario",
+      "value": 2000,
+      "type": "entrada",
+      "id": 5
+    }
+  ]
+}

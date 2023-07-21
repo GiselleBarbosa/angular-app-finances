@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { Observable } from 'rxjs';
-import { Transactions } from '../shared/models/transactions';
 import { TransactionService } from './services/transaction.service';
 import { SharedDataService } from './services/shared-data.service';
+import { Transactions } from 'src/app/shared/models/transactions';
 
 @Component({
   selector: 'app-transaction',
@@ -29,11 +29,11 @@ export class TransactionComponent implements OnInit {
   constructor(
     private service: TransactionService,
     private sharedData: SharedDataService
-  ) { }
+  ) {}
 
   ngOnInit() {
     /* usando service para se inscrever na variavel do componente irmao */
-    this.sharedData.values$.subscribe(values => {
+    this.sharedData.values$.subscribe((values) => {
       this.resultCalculate = values;
     });
   }
@@ -76,7 +76,5 @@ export class TransactionComponent implements OnInit {
     } else {
       return this.form.controls.name.hasError('name') ? 'Erro.' : '';
     }
-
-
   }
 }

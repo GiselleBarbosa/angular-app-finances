@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "server": "json-server --watch ./backend/db.json --3000",
+    "server": "json-server --watch ./backend/__mock.json --3000",
     "format": "npx prettier --write ."
   },
   "private": true,

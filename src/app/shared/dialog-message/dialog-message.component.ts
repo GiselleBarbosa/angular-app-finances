@@ -15,5 +15,4 @@ export class DialogMessageComponent {
     this.title = data.title;
     this.message = data.message;
   }
-
 }

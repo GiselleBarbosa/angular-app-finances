@@ -28,17 +28,16 @@ export class RetryHttpRequestsInterceptorInterceptor
       catchError((error: HttpErrorResponse) => {
         if (retries < maxRetryAttempts) {
           retries++;
-                 this.openDialog(
-          `${error.statusText} `,
-          `Erro ao tentar carregar suas transações `,
+          this.openDialog(
+            `${error.statusText} `,
+            `Erro ao tentar carregar suas transações `
           );
           return this.retryRequest(req, next);
         } else {
           () => {
-
             this.openDialog(
               'Erro inesperado',
-              'Algo estranho aconteceu e não foi possível carregar suas transações',
+              'Algo estranho aconteceu e não foi possível carregar suas transações'
             );
           };
           return throwError(error);

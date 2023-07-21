@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TransactionUpdateComponent } from './transaction-update/transaction-update.component';
+import { TransactionUpdateComponent } from './components/transaction-update/transaction-update.component';
 import { TransactionComponent } from './transaction.component';
 import { TransactionResolver } from './guards/transaction.resolver';
 

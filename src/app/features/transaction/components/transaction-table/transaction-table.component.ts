@@ -6,9 +6,9 @@ import { Subject } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
 
 import { DialogMessageComponent } from 'src/app/shared/dialog-message/dialog-message.component';
-import { Transactions } from '../../shared/models/transactions';
-import { SharedDataService } from '../services/shared-data.service';
-import { TransactionService } from '../services/transaction.service';
+import { SharedDataService } from '../../services/shared-data.service';
+import { TransactionService } from '../../services/transaction.service';
+import { Transactions } from 'src/app/shared/models/transactions';
 
 @Component({
   selector: 'app-transaction-table',

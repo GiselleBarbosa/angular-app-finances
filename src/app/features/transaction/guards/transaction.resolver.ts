@@ -12,7 +12,7 @@ import { TransactionService } from '../services/transaction.service';
   providedIn: 'root',
 })
 export class TransactionResolver implements Resolve<Transactions> {
-  constructor(private service: TransactionService) { }
+  constructor(private service: TransactionService) {}
 
   resolve(
     route: ActivatedRouteSnapshot,
