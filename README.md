@@ -17,8 +17,6 @@ The Finances project aims to help organize the expenses and monthly billing of i
 
 #### Design created in Figma
 
-`https://www.figma.com/file/DsZsSt7epsXDrW0ZQLh9dn/app-finances?node-id=0%3A1&t=2FGFX5VDgLd2hOwh-0`
-
 <p align="center">
   <img alt="projeto DevLinks" src="https://raw.githubusercontent.com/TiagoBarbosa88/app-finances/master/src/assets/img/capa.png" width="100%">  
 </p>
